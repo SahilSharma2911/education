@@ -1,10 +1,10 @@
-"use client"
+"use client";
 import OurHeader from "@/components/OurHeader/OurHeader";
 import React, { useState } from "react";
 import AllCards from "./AllCards";
 import Filtered from "./Filtered";
 
-const page = () => {
+const Page = () => {
   const title = "Universities";
   const [country, setCountry] = useState("All");
 
@@ -21,4 +21,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

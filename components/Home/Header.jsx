@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import "./Header.css";
 import { images } from "../../public/Images/data";
 import { StoreContext } from "@/context/StoreContext";
+import Image from "next/image";
 
 const Header = () => {
   const { headerData } = useContext(StoreContext);
@@ -20,14 +21,19 @@ const Header = () => {
     cssEase: "linear",
   };
   return (
-    <div className="w-full h-auto relative">
-      <div className=" w-[100vw]">
-        <img src={"/Images/homeBanner.png"} alt="img" />
+    <div className="w-full relative">
+      <div className="">
+        <Image
+          src={"/Images/homeBanner.png"}
+          width={2500}
+          height={2500}
+          className="w-[100vw] h-full"
+        />
       </div>
 
       {/* Slider  */}
-      <div className="w-10/12 z-20 md:w-7/12 left-[3rem] lg:w-5/12 mx-auto absolute top-0  text-white">
-        {/* <Slider {...settings}>
+      <div className="w-10/12 z-20 md:w-7/12 left-[6rem] lg:w-5/12 mx-auto absolute top-20  text-white">
+        <Slider {...settings}>
           {headerData.map((el) => (
             <div
               key={el.id}
@@ -44,7 +50,7 @@ const Header = () => {
               </button>
             </div>
           ))}
-        </Slider> */}
+        </Slider>
       </div>
     </div>
   );

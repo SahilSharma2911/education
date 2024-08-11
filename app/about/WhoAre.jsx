@@ -14,17 +14,17 @@ const WhoAre = () => {
           <div className="lg:w-6/12  font-jost lg:text-left text-center">
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. Lorem Ipsum is
-              simply dummy text of the printing and typesetting industry. Lorem
-              Ipsum has been the industry's standard dummy text ever since the
+              industry. Lorem Ipsum has been the industry&apos;s standard dummy
+              text ever since the 1500s, when an unknown printer took a galley
+              of type and scrambled it to make a type specimen book. Lorem Ipsum
+              is simply dummy text of the printing and typesetting industry.
+              Lorem Ipsum has been the industry&apos;s standard dummy text ever
+              since the 1500s, when an unknown printer took a galley of type and
+              scrambled it to make a type specimen book. Lorem Ipsum is simply
+              dummy text of the printing and typesetting industry. Lorem Ipsum
+              has been the industry&apos;s standard dummy text ever since the
               1500s, when an unknown printer took a galley of type and scrambled
-              it to make a type specimen book. Lorem Ipsum is simply dummy text
-              of the printing and typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text ever since the 1500s, when an
-              unknown printer took a galley of type and scrambled it to make a
-              type specimen book.
+              it to make a type specimen book.
             </p>
           </div>
           <div className=" lg:w-5/12 mt-3">

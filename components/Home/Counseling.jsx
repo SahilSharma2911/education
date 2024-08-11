@@ -7,7 +7,7 @@ const Counseling = () => {
   const { images } = useContext(StoreContext);
 
   return (
-    <div className="w-[100vw] mt-[8rem] h-auto bg-[#F0F0F0]">
+    <div className="w-[100vw] h-auto bg-[#F0F0F0]">
       <div className="w-10/12 mx-auto py-[3rem]">
         <div>
           <h1 className=" text-center font-poppins text-[#1F94F3] font-bold text-[2rem]">
