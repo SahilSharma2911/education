@@ -45,7 +45,7 @@ const Testimonials = () => {
         </div>
       </div>
 
-      <div className="w-full flex">
+      <div className=" bg-[#1F94F3]">
         {/* Slider */}
         <Slider />
       </div>

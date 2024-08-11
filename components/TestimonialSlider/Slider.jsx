@@ -9,6 +9,7 @@ import Card from "../Card/Card";
 const SliderComponent = () => {
   const settings = {
     dots: true,
+    arrows: false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
@@ -17,14 +18,14 @@ const SliderComponent = () => {
     autoplaySpeed: 3000,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1024, // lg
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 800, // Below lg
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -69,7 +70,7 @@ const SliderComponent = () => {
   };
 
   return (
-    <section id="slider" className="pt-5 mx-auto">
+    <section id="slider" className="pt-8 pb-20 mx-auto">
       <div className="container">
         <h1 className="text-center text-[2rem] text-yellow-500">
           <b>TESTIMONIALS</b>
