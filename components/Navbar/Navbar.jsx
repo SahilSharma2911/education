@@ -109,7 +109,7 @@ const Navbar = () => {
               Universities
             </Link>
             <hr className="border-black border" />
-            <Link href="/testimonial" className={`isActive("/testimonial")`}>
+            <Link href="/testimonial" className={isActive("/testimonial")}>
               Testimonials
             </Link>
           </div>
