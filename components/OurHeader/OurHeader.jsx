@@ -1,0 +1,12 @@
+import React from "react";
+
+const OurHeader = ({ title }) => {
+  return (
+    <div className="bg-banner2 bg-center relative  flex justify-center items-center text-white text-[3rem]  w-[100vw] h-[70vh] ">
+      <span className=" z-20">{title}</span>
+      <div className=" absolute top-0 left-0 bg-black w-full h-full  opacity-50 "></div>
+    </div>
+  );
+};
+
+export default OurHeader;

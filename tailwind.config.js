@@ -8,9 +8,13 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        banner: "url('/Images/bg_banner.png')",
+        banner2: "url('/Images//banner.jpeg')",
+      },
+      fontFamily: {
+        inria: ["Inria Sans", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+        jost: ["Jost", "sans-serif"],
       },
     },
   },
