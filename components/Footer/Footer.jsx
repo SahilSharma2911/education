@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa6";
@@ -10,9 +11,14 @@ const Footer = () => {
         {/* left section  */}
 
         <div className=" w-8/12 flex flex-col gap-7 font-jost">
-          <div>
-            <img src={"/Images/footlogo.png"} alt="logo" width={210} height={56} />
-          </div>
+          <Link href={"/"}>
+            <img
+              src={"/Images/footlogo.png"}
+              alt="logo"
+              width={210}
+              height={56}
+            />
+          </Link>
           <div>
             <h1>Where will your studies take you?</h1>
             <p>
@@ -23,12 +29,24 @@ const Footer = () => {
               universities and schools around the world.
             </p>
             <ul className=" md:flex-row md:text-[0.9rem] flex flex-col gap-3 my-4">
-              <li className=" underline">Home</li>
-              <li className=" underline">Services</li>
-              <li className=" underline">About Us</li>
-              <li className=" underline">Contact Us</li>
-              <li className=" underline">Universities</li>
-              <li className=" underline">Testimonials</li>
+              <li className=" underline">
+                <Link href={"/"}>Home</Link>{" "}
+              </li>
+              <li className=" underline">
+                <Link href={"/services"}>Services</Link>{" "}
+              </li>
+              <li className=" underline">
+                <Link href={"/about"}>About Us</Link>{" "}
+              </li>
+              <li className=" underline">
+                <Link href={"/contact"}>Contact Us</Link>{" "}
+              </li>
+              <li className=" underline">
+                <Link href={"/universities"}>Universities</Link>{" "}
+              </li>
+              <li className=" underline">
+                <Link href={"/testimonial"}>Testimonials</Link>{" "}
+              </li>
             </ul>
           </div>
         </div>

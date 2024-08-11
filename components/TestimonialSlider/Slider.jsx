@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -7,6 +7,8 @@ import { testimonial } from "../../public/Images/data";
 import Card from "../Card/Card";
 
 const SliderComponent = () => {
+  const [activeSlide, setActiveSlide] = useState(0);
+
   const settings = {
     dots: true,
     arrows: false,
@@ -16,23 +18,24 @@ const SliderComponent = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+    beforeChange: (current, next) => setActiveSlide(next),
     responsive: [
       {
-        breakpoint: 1024, // lg
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 800, // Below lg
+        breakpoint: 800,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
     ],
-    customPaging: (i) => <div></div>,
+    customPaging: (i) => <div key={i}></div>,
     appendDots: (dots) => (
       <div
         style={{
@@ -71,23 +74,31 @@ const SliderComponent = () => {
 
   return (
     <section id="slider" className="pt-8 pb-20 mx-auto">
-      <div className="container">
+      <div className="mx-auto">
         <h1 className="text-center text-[2rem] text-yellow-500">
           <b>TESTIMONIALS</b>
         </h1>
         <p className="text-center">What Our Students Say</p>
-        <div className="slider my-6">
+        <div className="slider my-6 px-4 lg:px-10 xl:px-14">
           <Slider {...settings}>
-            {testimonial.map((item) => (
-              <Card
-                className="slider-card"
-                key={item.id}
-                name={item.name}
-                description={item.description}
-                image={item.img}
-                university={item.school}
-              />
-            ))}
+            {testimonial.map((item) => {
+              const isZoomed =
+                settings.slidesToShow === 3 &&
+                item.id === (activeSlide + 1) % testimonial.length;
+
+              return (
+                <div className="lg:py-10" key={item.id}>
+                  <Card
+                    className="slider-card"
+                    name={item.name}
+                    description={item.description}
+                    image={item.img}
+                    university={item.school}
+                    zoom={isZoomed}
+                  />
+                </div>
+              );
+            })}
           </Slider>
         </div>
       </div>
