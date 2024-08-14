@@ -3,7 +3,7 @@ import React from "react";
 const Ourservices = () => {
   return (
     <div className="w-[100vw] h-auto ">
-      <div className="w-10/12 flex flex-col mx-auto pb-[1rem] md:pb-[2rem] pt-[3rem]">
+      <div className="w-10/12 flex flex-col mx-auto pb-[1.2rem] md:pb-[2rem] pt-[3rem]">
         {/* Heading section  */}
         <div className="space-y-1">
           <h1 className=" text-center font-poppins text-[#1F94F3] font-bold text-[22px] md:text-[30px] leading-[33.6px] md:mb-2">
@@ -123,39 +123,39 @@ const Ourservices = () => {
           {/* Middle section  */}
           <div className="relative">
             {/* front block  */}
-            <div className="bg-sky-400 ml-[-1px] mb-[-1px] w-2 h-2 rotate-45 "></div>
-            <div className=" hidden lg:flex flex-col gap-[16rem] item-center  bg-sky-400 w-1 ">
+            <div className="bg-[#1E73BE] ml-[-1px] mb-[-1px] w-2 h-2 rotate-45 hidden lg:flex"></div>
+            <div className=" hidden lg:flex flex-col gap-[16rem] item-center  bg-[#1E73BE] w-1 ">
               {/* first block  */}
-              <div className="bg-sky-400 ml-[-6px] w-4 h-4 rotate-45 mt-[6rem] relative">
-                <div className=" absolute bottom-[-6px] left-4 bg-sky-400 rotate-45 w-1 h-[3rem]"></div>
+              <div className="bg-[#1E73BE] ml-[-6px] w-4 h-4 rotate-45 mt-[6rem] relative">
+                <div className=" absolute bottom-[-6px] left-4 bg-[#1E73BE] rotate-45 w-1 h-[3rem]"></div>
               </div>
               {/* second block  */}
-              <div className="bg-sky-400 relative ml-[-6px] w-4 h-4 rotate-45">
-                <div className=" absolute top-[-6px] right-4 bg-sky-400 rotate-45 w-1 h-[3rem]"></div>
+              <div className="bg-[#1E73BE] relative ml-[-6px] w-4 h-4 rotate-45">
+                <div className=" absolute top-[-6px] right-4 bg-[#1E73BE] rotate-45 w-1 h-[3rem]"></div>
               </div>
 
               {/* third block  */}
-              <div className="bg-sky-400 ml-[-6px] w-4 h-4 rotate-45 mt-[-3.5rem] relative">
-                <div className=" absolute bottom-[-6px] left-4 bg-sky-400 rotate-45 w-1 h-[3rem]"></div>
+              <div className="bg-[#1E73BE] ml-[-6px] w-4 h-4 rotate-45 mt-[-3.5rem] relative">
+                <div className=" absolute bottom-[-6px] left-4 bg-[#1E73BE] rotate-45 w-1 h-[3rem]"></div>
               </div>
 
               {/* fourth block  */}
-              <div className="bg-sky-400 relative ml-[-6px] w-4 h-4 rotate-45">
-                <div className=" absolute top-[-6px] right-4 bg-sky-400 rotate-45 w-1 h-[3rem]"></div>
+              <div className="bg-[#1E73BE] relative ml-[-6px] w-4 h-4 rotate-45">
+                <div className=" absolute top-[-6px] right-4 bg-[#1E73BE] rotate-45 w-1 h-[3rem]"></div>
               </div>
 
               {/* fifth block  */}
               <div className="bg-sky-400 relative ml-[-6px] w-4 h-4 rotate-45 mt-[-2.7rem]">
-                <div className=" absolute bottom-[-6px] left-4 bg-sky-400 rotate-45 w-1 h-[3rem]"></div>
+                <div className=" absolute bottom-[-6px] left-4 bg-[#1E73BE] rotate-45 w-1 h-[3rem]"></div>
               </div>
 
               {/* sixth block  */}
-              <div className="bg-sky-400 ml-[-6px] w-4 h-4 rotate-45 mt-[-1rem] relative">
-                <div className=" absolute top-[-6px] right-4  bg-sky-400 rotate-45 w-1 h-[3rem]"></div>
+              <div className="bg-[#1E73BE] ml-[-6px] w-4 h-4 rotate-45 mt-[-1rem] relative">
+                <div className=" absolute top-[-6px] right-4  bg-[#1E73BE] rotate-45 w-1 h-[3rem]"></div>
               </div>
 
               {/* last block  */}
-              <div className="bg-sky-400 ml-[-1px] mb-[-1px] w-2 h-2 rotate-45 "></div>
+              <div className="bg-[#1E73BE] ml-[-1px] mb-[-1px] w-2 h-2 rotate-45 "></div>
             </div>
           </div>
 

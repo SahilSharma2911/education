@@ -14,7 +14,7 @@ const University = () => {
 
       {/* grid  */}
 
-      <div className=" w-10/12 gap-9 mx-auto md:grid-cols-4 lg:grid-cols-6 grid grid-cols-3 grid-rows-6 mt-[1rem] mb-[3rem] md:mb-[4rem] md:mt-[3rem] place-items-center lg:grid-rows-3">
+      <div className=" w-10/12 gap-9 mx-auto md:grid-cols-4 lg:grid-cols-6 grid grid-cols-3 grid-rows-6 mt-[2rem] mb-[3rem] md:mb-[4rem] md:mt-[3rem] place-items-center lg:grid-rows-3">
         {/* 1 */}
         <div className=" w-[5rem] h-[5rem] lg:h-[10rem] lg:w-[10rem] bg-[#D9D9D9]"></div>
 
