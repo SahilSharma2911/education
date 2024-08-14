@@ -15,37 +15,12 @@ const Navbar = () => {
 
   const handleLinkClick = () => {
     setOpen(false);
-    window.scrollTo(0, 0); // Scroll to the top after the link is clicked
+    window.scrollTo(0, 0);
   };
 
   useEffect(() => {
-    const handleRouteChange = () => {
-      window.scrollTo(0, 0); // Ensure the page scrolls to the top when the route changes
-    };
-
-    // Listen for route changes and scroll to top
-    router.push(pathname, pathname, { scroll: false });
-
-    // Cleanup function to reset the scroll behavior
-    return () => {
-      router.push(pathname, pathname, { scroll: true });
-    };
-  }, [router, pathname]);
-
-  useEffect(() => {
-    if (isOpen) {
-      // Disable scrolling when the menu is open
-      document.body.style.overflow = "hidden";
-    } else {
-      // Enable scrolling when the menu is closed
-      document.body.style.overflow = "auto";
-    }
-
-    // Cleanup function to reset the body overflow style when the component unmounts
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [isOpen]);
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <div className="w-[100vw] h-auto relative">
