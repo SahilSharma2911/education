@@ -3,7 +3,7 @@ import React from "react";
 const Ourservices = () => {
   return (
     <div className="w-[100vw] h-auto ">
-      <div className="w-10/12 flex flex-col mx-auto pb-[1.2rem] md:pb-[2rem] pt-[3rem]">
+      <div className="w-10/12 flex flex-col mx-auto pb-[1.2rem] md:pb-[2rem] pt-[3rem] md:pt-[4rem]">
         {/* Heading section  */}
         <div className="space-y-1">
           <h1 className=" text-center font-poppins text-[#1F94F3] font-bold text-[22px] md:text-[30px] leading-[33.6px] md:mb-2">
@@ -145,7 +145,7 @@ const Ourservices = () => {
               </div>
 
               {/* fifth block  */}
-              <div className="bg-sky-400 relative ml-[-6px] w-4 h-4 rotate-45 mt-[-2.7rem]">
+              <div className="bg-[#1E73BE] relative ml-[-6px] w-4 h-4 rotate-45 mt-[-2.7rem]">
                 <div className=" absolute bottom-[-6px] left-4 bg-[#1E73BE] rotate-45 w-1 h-[3rem]"></div>
               </div>
 

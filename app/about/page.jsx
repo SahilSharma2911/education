@@ -12,7 +12,7 @@ const page = () => {
       <OurHeader title={title} />
       <WhoAre/>
       <Why/>
-      <Counseling/>
+      <Counseling bgColor=""/>
       <Professional/>
     </main>
   );

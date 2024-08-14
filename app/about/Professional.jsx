@@ -8,13 +8,13 @@ const Professional = () => {
   const [show3, setShow3] = useState(false);
   return (
     <div>
-      <div className="w-10/12 mx-auto my-[3rem]">
+      <div className="w-10/12 mx-auto mb-[3rem] md:mb-[4rem] mt-[1rem]">
         {/* heading section  */}
-        <div className=" space-y-5">
-          <h1 className=" text-center font-poppins text-[#1F94F3] font-bold text-[2rem]">
+        <div className="space-y-1 md:space-y-3">
+          <h1 className="text-center font-poppins text-[#1F94F3] font-bold text-[22px] md:text-[30px] leading-[33.6px] md:mb-2">
             The Best of Professionals
           </h1>
-          <p className=" font-jost text-center text-slate-500 ">
+          <p className="font-jost text-center text-[#5C6066] text-[14px] md:text-[16px]">
             We offer international students a pathway to study in leading
             universities. But it’s more than a pathway. We go beyond other
             foundation programmes – helping you to grow as a person and as a
@@ -23,7 +23,7 @@ const Professional = () => {
         </div>
 
         {/* second section  */}
-        <div className=" mt-[2rem] flex-col gap-[2rem] md:flex-wrap md:flex-row  flex flex-wrap justify-between">
+        <div className="mt-[2rem] md:mt-[3.5rem] flex-col gap-[2rem] md:flex-wrap md:flex-row  flex flex-wrap justify-between">
           {/* first  */}
           <div
             onMouseEnter={() => setShow1(true)}

@@ -2,16 +2,18 @@ import React from "react";
 
 const WhoAre = () => {
   return (
-    <div className="w-[100vw] h-auto my-[5rem]">
-      <div className="w-10/12 mx-auto">
+    <div className="w-[100vw] h-auto">
+      <div className="w-10/12 mx-auto  md:pb-[2rem] pt-[3rem] md:pt-[4rem]">
         <div>
-          <h1 className=" text-center font-poppins text-[#1F94F3] font-bold text-[2rem]">
+          <h1 className="text-center font-poppins text-[#1F94F3] font-bold text-[22px] md:text-[30px] leading-[33.6px] md:mb-2">
             WHO WE ARE
           </h1>
-          <p className=" font-jost text-center ">Road Map to Study Abroad</p>
+          <p className="font-jost text-center text-[#5C6066] text-[14px] md:text-[16px]">
+            Road Map to Study Abroad
+          </p>
         </div>
-        <div className="w-full lg:justify-between lg:flex-row flex flex-col my-[2rem] items-center">
-          <div className="lg:w-6/12  font-jost lg:text-left text-center">
+        <div className="w-full lg:justify-between lg:flex-row flex flex-col-reverse my-[2rem] mt-4 md:mt-12">
+          <div className="lg:w-6/12 font-jost lg:text-left text-center py-4 text-[#5C6066] leading-[20px] md:leading-[23px] mt-2 md:mt-0">
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry&apos;s standard dummy

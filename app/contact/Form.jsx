@@ -11,46 +11,48 @@ import {
 
 const Form = () => {
   return (
-    <div className="w-[100vw] h-auto bg-gray-100 py-[3rem]">
+    <div className="w-[100vw] h-auto bg-[#F0F0F0] py-[3rem]">
       <div className="w-full mx-auto lg:flex-row lg:w-10/12 lg:mx-auto lg:justify-between flex flex-col">
         {/* section-1  */}
-        <div className=" lg:w-7/12 flex justify-center items-center w-full bg-gray-100">
+        <div className="font-poppins lg:w-7/12 flex justify-center items-center w-full">
           <div className=" p-8 rounded-lg w-full">
-            <h2 className="text-2xl font-bold mb-6 text-gray-800">
+            <p className="text-[12px] leading-[12px] text-[#142031]">Send us an Email</p>
+            <h2 className="text-[22px] md:text-[32px] font-medium leading-[40px] md:leading-[61px] text-[#142031] mt-2">
               Got a question? Ask our team!
             </h2>
-            <p className="text-gray-600 mb-6">
+            <div className="bg-[#1F94F3] h-[2px] w-[100px] mt-3"></div>
+            <p className="text-[#142031] text-[14px] md:text-[16px] leading-[30px] mt-6">
               Fill out the contact form and we will get back to you with the
               right answer.
             </p>
 
-            <form className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
+            <form className="space-y-6 mt-12 text-[12px] leading-[18px]">
+              <div className="grid grid-cols-2 gap-5">
                 <input
                   type="text"
                   placeholder="First Name*"
-                  className="border border-gray-300 p-2 rounded w-full"
+                  className="border border-[#CBD6E2] p-3 rounded w-full "
                 />
                 <input
                   type="text"
                   placeholder="Last Name*"
-                  className="border border-gray-300 p-2 rounded w-full"
+                  className="border border-[#CBD6E2] p-3 rounded w-full"
                 />
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-5">
                 <input
                   type="email"
                   placeholder="Email*"
-                  className="border border-gray-300 p-2 rounded w-full"
+                  className="border border-[#CBD6E2] p-3 rounded w-full"
                 />
                 <input
                   type="text"
                   placeholder="Phone*"
-                  className="border border-gray-300 p-2 rounded w-full"
+                  className="border border-[#CBD6E2] p-3 rounded w-full"
                 />
               </div>
-              <div className="grid grid-cols-2 gap-4">
-                <select className="border border-gray-300 p-2 rounded w-full">
+              <div className="grid grid-cols-2 gap-5">
+                <select className="border border-gray-300 p-3 rounded w-full">
                   <option>State of residence</option>
                   <option>State 1</option>
                   <option>State 2</option>
@@ -60,12 +62,12 @@ const Form = () => {
                 <input
                   type="text"
                   placeholder="Subject"
-                  className="border border-gray-300 p-2 rounded w-full"
+                  className="border border-[#CBD6E2] p-3 rounded w-full"
                 />
               </div>
               <textarea
                 placeholder="Your Message"
-                className="border border-gray-300 p-2 rounded w-full h-32"
+                className="border border-[#CBD6E2] p-3 rounded w-full h-32"
               ></textarea>
               <div className=" flex">
                 <button

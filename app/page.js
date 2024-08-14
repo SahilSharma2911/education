@@ -12,12 +12,12 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="">
-      <Header/>
-      <Counseling/>
-      <TopDestination/>
-      <WhyChoose/>
-      <Testimonials/>
-      <Faq/>
+      <Header />
+      <Counseling bgColor="#F0F0F0" />
+      <TopDestination />
+      <WhyChoose />
+      <Testimonials />
+      <Faq />
     </main>
   );
 }
