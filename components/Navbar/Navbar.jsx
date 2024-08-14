@@ -1,38 +1,71 @@
 "use client";
-import { useContext, useState } from "react";
-import { RxHamburgerMenu } from "react-icons/rx";
-import { IoClose } from "react-icons/io5";
+import { useContext, useState, useEffect } from "react";
+import { Squash as Hamburger } from "hamburger-react";
 import Link from "next/link";
 import { StoreContext } from "@/context/StoreContext";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const Navbar = () => {
   const { images } = useContext(StoreContext);
-  const [showNav, setShowNav] = useState(false);
+  const [isOpen, setOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
 
   const isActive = (path) => (pathname === path ? "text-[#1F94F3]" : "");
 
+  const handleLinkClick = () => {
+    setOpen(false);
+    window.scrollTo(0, 0); // Scroll to the top after the link is clicked
+  };
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      window.scrollTo(0, 0); // Ensure the page scrolls to the top when the route changes
+    };
+
+    // Listen for route changes and scroll to top
+    router.push(pathname, pathname, { scroll: false });
+
+    // Cleanup function to reset the scroll behavior
+    return () => {
+      router.push(pathname, pathname, { scroll: true });
+    };
+  }, [router, pathname]);
+
+  useEffect(() => {
+    if (isOpen) {
+      // Disable scrolling when the menu is open
+      document.body.style.overflow = "hidden";
+    } else {
+      // Enable scrolling when the menu is closed
+      document.body.style.overflow = "auto";
+    }
+
+    // Cleanup function to reset the body overflow style when the component unmounts
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
+
   return (
-    <div className="w-[100vw] h-auto">
-      <div className="topNav text-white font-light w-full bg-[#1C1F2A] py-1.5 text-[0.8rem] hidden md:flex">
+    <div className="w-[100vw] h-auto relative">
+      <div className="topNav text-white font-bold w-full bg-[#1C1F2A] py-1.5 text-[0.8rem] hidden md:flex justify-end">
         <ul className="font-inria flex justify-end px-8 gap-4">
           <Link href="/">News & Articles</Link>|<Link href="/">Facebook</Link>|
-          <Link href="/">Instagram</Link>|
-          <button onClick={() => setShowTopBar(false)}>x</button>
+          <Link href="/">Instagram</Link>| <Link href="/">X</Link>
         </ul>
       </div>
 
-      {/* Main Navbar section  */}
+      {/* Main Navbar section */}
       <div className="w-11/12 py-3 flex justify-between mx-auto items-center">
-        {/* left section  */}
+        {/* Left section */}
         <div className="flex gap-[4rem] items-center">
-          {/* logo  */}
+          {/* Logo */}
           <Link href={"/"}>
-            <img src={"/Images/logo.png"} alt="" />
+            <img src={"/Images/logo.png"} alt="Logo" />
           </Link>
 
-          {/* Pages list  */}
+          {/* Pages list */}
           <ul className="list lg:flex xl:gap-[3rem] lg:gap-3 lg:text-[1rem] hidden">
             <Link href="/" className={isActive("/")}>
               Home
@@ -55,70 +88,67 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* Right section  */}
+        {/* Right section */}
         <div className="hidden lg:flex items-center justify-center">
           <button className="lg:px-[1rem] lg:text[1rem] px-[3rem] py-3 rounded-3xl text-white bg-[#1F94F3] hover:bg-[#077bda] font-poppins">
-            Help Me Study abroad
+            Help Me Study Abroad
           </button>
         </div>
 
-        {/* Burger icon  */}
+        {/* Burger icon */}
         <div className="lg:hidden">
-          <button onClick={() => setShowNav(!showNav)}>
-            <RxHamburgerMenu className="text-[1.5rem]" />
-          </button>
+          <Hamburger toggled={isOpen} toggle={setOpen} size={20} />
         </div>
       </div>
 
-      {/* for mobile screen  */}
+      {/* Mobile menu section */}
       <div
-        id="Navbar"
-        className={`z-30 w-[100vw] h-[100vh] absolute top-0 bg-white ${
-          showNav ? "block" : "hidden"
-        } flex flex-col `}
+        className={`w-full overflow-hidden transition-max-height duration-500 ease-in-out bg-gray-100 ${
+          isOpen ? "h-[100vh] opacity-100" : "h-0 opacity-0"
+        }`}
       >
-        {/* Navbar in side section  */}
-        <div className="w-full ">
-          {/* section-1  */}
-          <div className="mx-auto pl-[1.2rem] justify-between bg-white items-center gap-4 flex  py-3">
-            <Link href={"/"}>
-              <img src={"/Images/logo.png"} alt="" />
-            </Link>
-
-            <div onClick={() => setShowNav(!showNav)} className="pr-4">
-              <IoClose className="font-bold text-[2rem]" />
-            </div>
-          </div>
-
-          {/* section-2  */}
-          <div className="text-[16px]  flex flex-col space-y-[1rem] font-bold px-8 pt-6">
-            <hr className="border-black border" />
-            <Link href="/" className={isActive("/")}>
-              Home
-            </Link>
-            <hr className="border-black border" />
-            <Link href="/services" className={isActive("/services")}>
-              Services
-            </Link>
-            <hr className="border-black border" />
-            <Link href="/about" className={isActive("/about")}>
-              About us
-            </Link>
-            <hr className="border-black border" />
-            <Link href="/universities" className={isActive("/universities")}>
-              Universities
-            </Link>
-            <hr className="border-black border" />
-            <Link href="/testimonial" className={isActive("/testimonial")}>
-              Testimonials
-            </Link>
-          </div>
-          {/* buttons  */}
-          <div className="flex items-center justify-center w-full p-8">
-            <button className="px-[3rem] py-3 rounded-3xl w-full text-white bg-[#1F94F3] hover:bg-[#077bda] font-poppins">
-              Help Me Study abroad
-            </button>
-          </div>
+        <div className="text-[16px] flex flex-col space-y-[1rem] font-bold px-8 pt-6">
+          <Link href="/" className={isActive("/")} onClick={handleLinkClick}>
+            Home
+          </Link>
+          <hr className="border-[#5C6066] border" />
+          <Link
+            href="/services"
+            className={isActive("/services")}
+            onClick={handleLinkClick}
+          >
+            Services
+          </Link>
+          <hr className="border-[#5C6066] border" />
+          <Link
+            href="/about"
+            className={isActive("/about")}
+            onClick={handleLinkClick}
+          >
+            About us
+          </Link>
+          <hr className="border-[#5C6066] border" />
+          <Link
+            href="/universities"
+            className={isActive("/universities")}
+            onClick={handleLinkClick}
+          >
+            Universities
+          </Link>
+          <hr className="border-[#5C6066] border" />
+          <Link
+            href="/testimonial"
+            className={isActive("/testimonial")}
+            onClick={handleLinkClick}
+          >
+            Testimonials
+          </Link>
+        </div>
+        {/* Buttons */}
+        <div className="flex items-center justify-center w-full p-8">
+          <button className="px-[3rem] py-3 rounded-3xl w-full text-white bg-[#1F94F3] hover:bg-[#077bda] font-poppins">
+            Help Me Study Abroad
+          </button>
         </div>
       </div>
     </div>

@@ -60,10 +60,13 @@ const faqData = [
 ];
 
 const Faq = () => {
-  const [openFaqId, setOpenFaqId] = useState(null);
+  const [openFaqs, setOpenFaqs] = useState({});
 
   const toggleFaq = (id) => {
-    setOpenFaqId((prevId) => (prevId === id ? null : id));
+    setOpenFaqs((prevOpenFaqs) => ({
+      ...prevOpenFaqs,
+      [id]: !prevOpenFaqs[id],
+    }));
   };
 
   const getContentStyle = (isOpen) => ({
@@ -73,20 +76,25 @@ const Faq = () => {
   });
 
   return (
-    <div className="w-full my-[6rem]">
-      <div className="w-9/12 lg:item-center lg:flex lg:flex-row lg:justify-between mx-auto">
+    <div className="w-full my-[3rem]">
+      <div className="space-y-1.5">
+        <h1 className="text-center font-poppins text-[#1F94F3] font-bold text-[2rem] border-b-[3px] border-[#1F94F3] w-fit mx-auto px-1 pb-1">
+          FAQ
+        </h1>
+      </div>
+      <div className="w-9/12 lg:item-center lg:flex lg:flex-row lg:justify-between mx-auto mt-[5rem]">
         <div className="space-y-8 w-full">
           {faqData.map(({ id, question, answer }) => (
             <div key={id} className="flex justify-between">
               <div>
                 <h1 className="font-heading font-semibold">{question}</h1>
-                <div style={getContentStyle(openFaqId === id)}>
+                <div style={getContentStyle(openFaqs[id])}>
                   <p className="font-text mt-3 w-10/12">{answer}</p>
                 </div>
               </div>
               <div>
                 <button onClick={() => toggleFaq(id)}>
-                  {openFaqId === id ? <FaMinus /> : <FaPlus />}
+                  {openFaqs[id] ? <FaMinus /> : <FaPlus />}
                 </button>
               </div>
             </div>

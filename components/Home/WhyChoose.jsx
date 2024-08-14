@@ -5,7 +5,7 @@ const WhyChoose = () => {
     <div className="w-[100vw] h-auto my-[3rem]">
       <div className="w-10/12 mx-auto">
         {/* heading section  */}
-        <div className=" space-y-5">
+        <div className=" space-y-1.5">
           <h1 className=" text-center font-poppins text-[#1F94F3] font-bold text-[2rem]">
             WHY CHOOSE US
           </h1>
@@ -15,7 +15,7 @@ const WhyChoose = () => {
         </div>
 
         {/* Grid section  */}
-        <div className=" lg:grid-cols-4 grid grid-cols-1 gap-4  my-[2rem]">
+        <div className=" lg:grid-cols-4 grid grid-cols-1 gap-4 mt-[4rem] ">
           {/* grid-1  */}
           <div className="bg-slate-300 rounded-xl relative ">
             <div className=" w-full h-full">

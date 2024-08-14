@@ -20,15 +20,15 @@ const Footer = () => {
             />
           </Link>
           <div>
-            <h1>Where will your studies take you?</h1>
-            <p>
+            <h1 className="text-[20px] font-bold">Where will your studies take you?</h1>
+            <p className="text-[14px] leading-[28px] mt-3">
               At educations.com, we believe that students who study abroad
               become the next generation of globally-minded adventurers and
               leaders - and we want more of you to do it! Every year, our search
               engine helps over 8 million students connect with some of the best
               universities and schools around the world.
             </p>
-            <ul className=" md:flex-row md:text-[0.9rem] flex flex-col gap-3 my-4">
+            <ul className=" md:flex-row md:text-[1rem] flex flex-col gap-5 my-4 mt-10 ">
               <li className=" underline">
                 <Link href={"/"}>Home</Link>{" "}
               </li>
