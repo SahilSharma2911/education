@@ -15,10 +15,12 @@ const Professional = () => {
             The Best of Professionals
           </h1>
           <p className="font-jost text-center text-[#5C6066] text-[14px] md:text-[16px]">
-            We offer international students a pathway to study in leading
-            universities. But it’s more than a pathway. We go beyond other
-            foundation programmes – helping you to grow as a person and as a
-            thinker, providing an experience that will stay with you for life.
+            With over 14 years of experience in overseas education counseling,
+            our team has successfully placed more than 10,000 students in
+            universities and colleges worldwide. We are dedicated to advancing
+            the field of education, where our expertise and the diversity of
+            opportunities allow us to play a pivotal role in international
+            education
           </p>
         </div>
 

@@ -4,43 +4,43 @@ import { MdOutlinePlayCircle } from "react-icons/md";
 const ParentTestimonials = () => {
   return (
     <div>
-      <div>
-        <h1 className=" text-center font-poppins text-[#1F94F3] font-bold text-[2rem]">
-          THE COUNSELING PROCESS
+      <div className="space-y-1">
+        <h1 className="text-center font-poppins text-[#1F94F3] font-bold text-[22px] md:text-[30px] leading-[33.6px] md:mb-2">
+          PARENTS TESTIMONIALS
         </h1>
-        <p className=" font-jost text-center text-slate-500 ">
-          Professional-Streamlined-Simple
+        <p className="font-jost text-center text-[#5C6066] text-[14px] md:text-[16px]">
+          What Parents has to say about us
         </p>
       </div>
 
-      <div className=" w-10/12 gap-9 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-[3rem] place-items-center ">
+      <div className=" w-10/12 gap-9 mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-[2.5rem] md:mt-[3rem] mb-[3rem] place-items-center ">
         {/* 1 */}
-        <div className=" w-[18rem] h-[12rem] flex justify-center items-center  bg-[#D9D9D9]">
+        <div className=" w-[21rem] h-[14.5rem] flex justify-center items-center  bg-[#D9D9D9]">
           <MdOutlinePlayCircle className=" text-[8rem]" />
         </div>
 
         {/* 2 */}
-        <div className=" w-[18rem] h-[12rem] flex justify-center items-center  bg-[#D9D9D9]">
+        <div className=" w-[21rem] h-[14.5rem] flex justify-center items-center  bg-[#D9D9D9]">
           <MdOutlinePlayCircle className=" text-[8rem]" />
         </div>
 
         {/* 3 */}
-        <div className=" w-[18rem] h-[12rem] flex justify-center items-center  bg-[#D9D9D9]">
+        <div className="  w-[21rem] h-[14.5rem] flex justify-center items-center  bg-[#D9D9D9]">
           <MdOutlinePlayCircle className=" text-[8rem]" />
         </div>
 
         {/* 4 */}
-        <div className=" w-[18rem] h-[12rem] flex justify-center items-center  bg-[#D9D9D9]">
+        <div className=" w-[21rem] h-[14.5rem] flex justify-center items-center  bg-[#D9D9D9]">
           <MdOutlinePlayCircle className=" text-[8rem]" />
         </div>
 
         {/* 5 */}
-        <div className=" w-[18rem] h-[12rem] flex justify-center items-center  bg-[#D9D9D9]">
+        <div className=" w-[21rem] h-[14.5rem] flex justify-center items-center  bg-[#D9D9D9]">
           <MdOutlinePlayCircle className=" text-[8rem]" />
         </div>
 
         {/* 6 */}
-        <div className=" w-[18rem] h-[12rem] flex justify-center items-center  bg-[#D9D9D9]">
+        <div className=" w-[21rem] h-[14.5rem] flex justify-center items-center  bg-[#D9D9D9]">
           <MdOutlinePlayCircle className=" text-[8rem]" />
         </div>
       </div>

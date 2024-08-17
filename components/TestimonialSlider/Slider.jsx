@@ -75,16 +75,27 @@ const SliderComponent = () => {
   return (
     <section id="slider" className="pt-8 pb-20 mx-auto">
       <div className="mx-auto">
-        <h1 className="text-center text-[2rem] text-yellow-500">
+        <h1 className="font-bold text-[22px] md:text-[30px] leading-[33.6px] md:mb-2 text-center text-[#FED425]">
           <b>TESTIMONIALS</b>
         </h1>
-        <p className="text-center">What Our Students Say</p>
+        <p className="font-jost text-center text-white text-[14px] md:text-[16px]">
+          What Our Students Say
+        </p>
         <div className="slider my-6 px-4 lg:px-10 xl:px-14">
           <Slider {...settings}>
-            {testimonial.map((item) => {
+            {testimonial.map((item, index) => {
               const isZoomed =
                 settings.slidesToShow === 3 &&
                 item.id === (activeSlide + 1) % testimonial.length;
+
+              let shade = "bg-blue-900";
+              if (settings.slidesToShow === 3) {
+                if (item.id === (activeSlide + 1) % testimonial.length) {
+                  shade = "";
+                } else {
+                  shade = "lg:opacity-50";
+                }
+              }
 
               return (
                 <div className="lg:py-10" key={item.id}>
@@ -95,6 +106,7 @@ const SliderComponent = () => {
                     image={item.img}
                     university={item.school}
                     zoom={isZoomed}
+                    shade={shade}
                   />
                 </div>
               );

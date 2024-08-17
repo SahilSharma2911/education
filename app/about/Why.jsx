@@ -18,19 +18,10 @@ const Why = () => {
         <div className="my-[1rem] md:my-[3rem] flex flex-col lg:flex-row gap-2 md:gap-4 justify-between text-center">
           <div>
             <h1 className=" text-[60px] leading-[90px] text-[#1F94F3] font-poppins">
-              100%
-            </h1>
-            <p className=" font-jost font-semibold text-[#5C6066]">
-              VISA GRANT (2023-24)
-            </p>
-          </div>
-          <div className=" bg-[#1F94F3] w-[0.1rem]"></div>
-          <div>
-            <h1 className=" text-[60px] leading-[90px] text-[#1F94F3] font-poppins">
               10,000+
             </h1>
-            <p className=" font-jost font-semibold text-[#5C6066]">
-              STUDENT ABROAD
+            <p className=" font-jost text-[#5C6066] text-[15px] leading-[21px] font-bold">
+              STUDENTS Abroad in last 14 years
             </p>
           </div>
           <div className=" bg-[#1F94F3] w-[0.1rem]"></div>
@@ -39,7 +30,16 @@ const Why = () => {
               100%
             </h1>
             <p className=" font-jost font-semibold text-[#5C6066]">
-              ADMISSION SUCCESS RATE
+              Admission Success Rate
+            </p>
+          </div>
+          <div className=" bg-[#1F94F3] w-[0.1rem]"></div>
+          <div>
+            <h1 className=" text-[60px] leading-[90px] text-[#1F94F3] font-poppins">
+              100%
+            </h1>
+            <p className=" font-jost font-semibold text-[#5C6066]">
+              VISA SUCCESS RATE
             </p>
           </div>
           <div className=" bg-[#1F94F3] w-[0.1rem]"></div>

@@ -1,26 +1,55 @@
 "use client";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import { Squash as Hamburger } from "hamburger-react";
 import Link from "next/link";
 import { StoreContext } from "@/context/StoreContext";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const { images } = useContext(StoreContext);
   const [isOpen, setOpen] = useState(false);
   const pathname = usePathname();
-  const router = useRouter();
+  const [activeLink, setActiveLink] = useState(pathname);
+  const [indicatorStyle, setIndicatorStyle] = useState({});
+  const linksRef = useRef([]);
 
-  const isActive = (path) => (pathname === path ? "text-[#1F94F3]" : "");
-
-  const handleLinkClick = () => {
+  const handleLinkClick = (path) => {
+    setActiveLink(path);
     setOpen(false);
     window.scrollTo(0, 0);
   };
 
   useEffect(() => {
+    setActiveLink(pathname);
     window.scrollTo(0, 0);
   }, [pathname]);
+
+  useEffect(() => {
+    const activeIndex = [
+      "",
+      "services",
+      "about",
+      "contact",
+      "universities",
+      "testimonial",
+    ].indexOf(activeLink.replace("/", ""));
+    if (linksRef.current[activeIndex]) {
+      const link = linksRef.current[activeIndex];
+      setIndicatorStyle({
+        width: `${link.offsetWidth}px`,
+        left: `${link.offsetLeft}px`,
+      });
+    }
+  }, [activeLink]);
+
+  const linkNames = {
+    "/": "Home",
+    "/services": "Services",
+    "/about": "About Us",
+    "/contact": "Contact Us",
+    "/universities": "Universities",
+    "/testimonial": "Testimonials",
+  };
 
   return (
     <div className="w-[100vw] h-auto relative">
@@ -32,7 +61,7 @@ const Navbar = () => {
       </div>
 
       {/* Main Navbar section */}
-      <div className="w-11/12 py-3 flex justify-between mx-auto items-center">
+      <div className="w-11/12 py-3 flex justify-between mx-auto items-center relative">
         {/* Left section */}
         <div className="flex gap-[4rem] items-center">
           {/* Logo */}
@@ -41,31 +70,31 @@ const Navbar = () => {
           </Link>
 
           {/* Pages list */}
-          <ul className="list lg:flex xl:gap-[3rem] lg:gap-3 lg:text-[1rem] hidden">
-            <Link href="/" className={isActive("/")}>
-              Home
-            </Link>
-            <Link href="/services" className={isActive("/services")}>
-              Services
-            </Link>
-            <Link href="/about" className={isActive("/about")}>
-              About us
-            </Link>
-            <Link href="/contact" className={isActive("/contact")}>
-              Contact us
-            </Link>
-            <Link href="/universities" className={isActive("/universities")}>
-              Universities
-            </Link>
-            <Link href="/testimonial" className={isActive("/testimonial")}>
-              Testimonials
-            </Link>
+          <ul className="list lg:flex xl:gap-[3rem] lg:gap-3 lg:text-[14px] hidden relative">
+            {Object.keys(linkNames).map((path, index) => (
+              <Link
+                key={path}
+                href={path}
+                ref={(el) => (linksRef.current[index] = el)}
+                className={`relative top-[2px] ${
+                  activeLink === path ? "text-[#1F94F3]" : ""
+                }`}
+                onClick={() => handleLinkClick(path)}
+              >
+                {linkNames[path]}
+              </Link>
+            ))}
+            {/* Blue bar */}
+            <div
+              className="absolute -bottom-[26px] h-[3px] bg-[#1F94F3] transition-all duration-300"
+              style={indicatorStyle}
+            ></div>
           </ul>
         </div>
 
         {/* Right section */}
-        <div className="hidden lg:flex items-center justify-center">
-          <button className="lg:px-[1rem] lg:text[1rem] px-[3rem] py-3 rounded-3xl text-white bg-[#1F94F3] hover:bg-[#077bda] font-poppins">
+        <div className="hidden lg:flex items-center justify-center w-fit">
+          <button className="lg:px-[12px] text-[12px] font-semibold py-3 rounded-3xl text-white bg-[#1F94F3] hover:bg-[#077bda] font-poppins w-[13rem]">
             Help Me Study Abroad
           </button>
         </div>
@@ -82,42 +111,21 @@ const Navbar = () => {
           isOpen ? "h-[100vh] opacity-100" : "h-0 opacity-0"
         }`}
       >
-        <div className="text-[16px] flex flex-col space-y-[1rem] font-bold px-8 pt-6">
-          <Link href="/" className={isActive("/")} onClick={handleLinkClick}>
-            Home
-          </Link>
-          <hr className="border-[#5C6066] border" />
-          <Link
-            href="/services"
-            className={isActive("/services")}
-            onClick={handleLinkClick}
-          >
-            Services
-          </Link>
-          <hr className="border-[#5C6066] border" />
-          <Link
-            href="/about"
-            className={isActive("/about")}
-            onClick={handleLinkClick}
-          >
-            About us
-          </Link>
-          <hr className="border-[#5C6066] border" />
-          <Link
-            href="/universities"
-            className={isActive("/universities")}
-            onClick={handleLinkClick}
-          >
-            Universities
-          </Link>
-          <hr className="border-[#5C6066] border" />
-          <Link
-            href="/testimonial"
-            className={isActive("/testimonial")}
-            onClick={handleLinkClick}
-          >
-            Testimonials
-          </Link>
+        <div className="text-[16px] flex flex-col font-bold px-8 pt-6">
+          {Object.keys(linkNames).map((path, index) => (
+            <div key={path}>
+              <Link
+                href={path}
+                className={activeLink === path ? "text-[#1F94F3]" : ""}
+                onClick={() => handleLinkClick(path)}
+              >
+                {linkNames[path]}
+              </Link>
+              {index < Object.keys(linkNames).length - 1 && (
+                <hr className="my-5 bg-[#5C6066]" />
+              )}
+            </div>
+          ))}
         </div>
         {/* Buttons */}
         <div className="flex items-center justify-center w-full p-8">

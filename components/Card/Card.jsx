@@ -6,10 +6,10 @@ import {
   FaQuoteLeft,
 } from "react-icons/fa";
 
-const Card = ({ name, description, image, university, zoom }) => {
+const Card = ({ name, description, image, university, zoom, shade }) => {
   return (
     <div
-      className={`slider-card mx-4 xl:mx-8 2xl:mx-10 bg-blue-900 text-white rounded-xl p-6 relative shadow-lg transition-transform duration-300 ${
+      className={`slider-card mx-4 xl:mx-8 2xl:mx-10 ${shade} bg-[#122B6B] text-white rounded-xl p-6 relative shadow-lg transition-transform duration-300 ${
         zoom ? "lg:transform lg:scale-110" : ""
       }`}
     >
@@ -18,7 +18,7 @@ const Card = ({ name, description, image, university, zoom }) => {
       </div>
       <div className="absolute top-4 left-4 text-yellow-400 text-3xl"></div>
       <p className="mt-10 text-sm">{description}</p>
-      <div className="mt-4 flex justify-center space-x-3 text-yellow-400">
+      <div className="mt-4 flex justify-center space-x-8 text-yellow-400">
         <FaLinkedin className="text-2xl cursor-pointer" />
         <FaGooglePlusG className="text-2xl cursor-pointer" />
         <FaImage className="text-2xl cursor-pointer" />

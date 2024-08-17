@@ -2,124 +2,82 @@ import React from "react";
 
 const WhyChoose = () => {
   return (
-    <div className="w-[100vw] h-auto my-[3rem]">
+    <div className="w-[100vw] h-auto mt-[3.5rem] md:mt-[3rem] mb-[3rem]">
       <div className="w-10/12 mx-auto">
-        {/* heading section  */}
-        <div className=" space-y-1.5">
-          <h1 className=" text-center font-poppins text-[#1F94F3] font-bold text-[2rem]">
+        {/* Heading section */}
+        <div className="space-y-1.5">
+          <h1 className="text-center font-poppins text-[#1F94F3] font-bold text-[22px] md:text-[30px] leading-[33.6px] md:mb-2">
             WHY CHOOSE US
           </h1>
-          <p className=" font-jost text-center text-slate-500 ">
+          <p className="font-jost text-center text-[#5C6066] text-[14px] md:text-[16px]">
             Endless possibilities begin here
           </p>
         </div>
 
-        {/* Grid section  */}
-        <div className=" lg:grid-cols-4 grid grid-cols-1 gap-4 mt-[4rem] ">
-          {/* grid-1  */}
-          <div className="bg-slate-300 rounded-xl relative ">
-            <div className=" w-full h-full">
-              <img
-                src={"/Images/choose1.jpeg"}
-                alt=""
-                className=" rounded-xl w-full h-full"
-              />
-            </div>
-            <div className=" rounded-xl text-white h-full w-full bg-black bg-opacity-40 top-0 bottom-0 flex  flex-col justify-end gap-1 px-3 pb-3 absolute">
-              <p className=" font-jost">Serverd</p>
-              <h1 className=" text-[2rem] font-inria">750+</h1>
-              <p className=" font-jost">
-                Student from <span className=" font-bold">21 countries</span>
-              </p>
-            </div>
-          </div>
-
-          {/* grid-2  */}
-
-          <div className="bg-slate-300 rounded-xl row-span-2">
-            <div className="bg-slate-300 rounded-xl relative ">
-              <div>
+        {/* Grid section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-[2rem] md:mt-[4rem]">
+          {[
+            {
+              src: "/Images/choose1.jpeg",
+              text: "Served",
+              number: "750+",
+              subtext: "Student from 21 countries",
+            },
+            {
+              src: "/Images/choose2.jpeg",
+              text: "",
+              number: "120+",
+              subtext: "Student got the university of their choice",
+            },
+            {
+              src: "/Images/choose3.jpeg",
+              text: "",
+              number: "900+",
+              subtext: "Acceptance in 2024",
+            },
+            {
+              src: "/Images/choose4.jpeg",
+              text: "",
+              number: "10x",
+              subtext:
+                "More likely to be accepted to elite universities in the US",
+            },
+            {
+              src: "/Images/choose5.jpeg",
+              text: "",
+              number: "120+",
+              subtext: "Elite university admissions",
+            },
+            {
+              src: "/Images/choose6.jpeg",
+              text: "",
+              number: "3,400+",
+              subtext: "Acceptance over 10 years",
+            },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className={`bg-slate-300 rounded-xl overflow-hidden transition-all duration-500 ${
+                index === 1 || index === 3 ? "md:row-span-2" : ""
+              }`}
+            >
+              <div className="relative w-full h-full">
+                {/* Image */}
                 <img
-                  src={"/Images/choose2.jpeg"}
+                  src={item.src}
                   alt=""
-                  className=" rounded-xl w-full h-full"
+                  className="rounded-xl w-full h-full object-cover transition-transform duration-500 transform hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-black opacity-40 rounded-xl pointer-events-none"></div>
+                {/* Text content */}
+                <div className="absolute bottom-0 p-4 text-white z-10">
+                  {item.text && <p className="font-jost">{item.text}</p>}
+                  <h1 className="text-[2rem] font-inria">{item.number}</h1>
+                  <p className="font-jost">{item.subtext}</p>
+                </div>
               </div>
-              <div className=" rounded-xl text-white w-full bg-black bg-opacity-40 top-0 bottom-0 flex  flex-col justify-end gap-1 px-3 pb-3 absolute">
-                <h1 className=" text-[2rem] font-inria">120+</h1>
-                <p className=" font-jost">
-                  Student got the university of <br />
-                  their choice
-                </p>
-              </div>
             </div>
-          </div>
-
-          {/* grid-3  */}
-
-          <div className="bg-slate-300 rounded-xl relative ">
-            <div className=" w-full h-full">
-              <img
-                src={"/Images/choose3.jpeg"}
-                alt=""
-                className=" rounded-xl w-full h-full"
-              />
-            </div>
-            <div className=" rounded-xl text-white h-full w-full bg-black bg-opacity-40 top-0 bottom-0 flex  flex-col justify-end gap-1 px-3 pb-3 absolute">
-              <h1 className=" text-[2rem] font-inria">900+</h1>
-              <p className=" font-jost">acceptance in 2024 </p>
-            </div>
-          </div>
-
-          {/* grid-4  */}
-
-          <div className="bg-slate-300 rounded-xl relative row-span-2 ">
-            <div className=" w-full h-full">
-              <img
-                src={"/Images/choose4.jpeg"}
-                alt=""
-                className=" object-cover rounded-xl w-full h-full"
-              />
-            </div>
-            <div className=" rounded-xl text-white h-full w-full bg-black bg-opacity-40 top-0 bottom-0 flex  flex-col justify-end gap-1 px-3 pb-3 absolute">
-              <h1 className=" text-[2rem] font-inria">10x</h1>
-              <p className=" font-jost">
-                more likely to be accepted to elite universities in the US
-              </p>
-            </div>
-          </div>
-
-          {/* grid-5 */}
-
-          <div className="bg-slate-300 rounded-xl relative ">
-            <div className=" w-full h-full">
-              <img
-                src={"/Images/choose5.jpeg"}
-                alt=""
-                className=" rounded-xl w-full h-full"
-              />
-            </div>
-            <div className=" rounded-xl text-white h-full w-full bg-black bg-opacity-40 top-0 bottom-0 flex  flex-col justify-end gap-1 px-3 pb-3 absolute">
-              <h1 className=" text-[2rem] font-inria">120+</h1>
-              <p className=" font-jost">elite university admissions</p>
-            </div>
-          </div>
-
-          {/* grid-6  */}
-
-          <div className="bg-slate-300 rounded-xl relative ">
-            <div className=" w-full h-full">
-              <img
-                src={"/Images/choose6.jpeg"}
-                alt=""
-                className=" rounded-xl w-full h-full"
-              />
-            </div>
-            <div className=" rounded-xl text-white h-full w-full bg-black bg-opacity-40 top-0 bottom-0 flex  flex-col justify-end gap-1 px-3 pb-3 absolute">
-              <h1 className=" text-[2rem] font-inria">3,400+</h1>
-              <p className=" font-jost"> acceptance over 10 years</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

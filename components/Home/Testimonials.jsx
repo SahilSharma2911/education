@@ -13,7 +13,7 @@ const Testimonials = () => {
             <h1 className="font-poppins text-[2.2rem] text-[#1B52E0]">
               100<span className="text-[1rem] font-bold">%</span>
             </h1>
-            <p className="text-[#5C6066]">VISA GRANT (2023-24)</p>
+            <p className="text-[#5C6066] font-bold">VISA GRANT (2023-24)</p>
           </div>
 
           {/* second block  */}
@@ -21,26 +21,26 @@ const Testimonials = () => {
             <h1 className="font-poppins text-[2.2rem] text-[#1B52E0]">
               24<span className="text-[1rem] font-bold">x7</span>
             </h1>
-            <p className="text-[#5C6066]">SERVICE</p>
+            <p className="text-[#5C6066] font-bold">SERVICE</p>
           </div>
 
           {/* Third block  */}
           <div className="flex flex-col items-center py-[1rem]">
             <h1 className="flex items-baseline font-poppins text-[2.2rem] text-[#1B52E0]">
-              0
+              5
               <span className="text-[1rem]">
                 <MdOutlineStarBorderPurple500 />
               </span>
             </h1>
-            <p className="text-[#5C6066]">GOOGLE RATING</p>
+            <p className="text-[#5C6066] font-bold">GOOGLE RATING</p>
           </div>
 
           {/* fourth block  */}
           <div className="flex flex-col items-center py-[1rem]">
             <h1 className="font-poppins text-[2.2rem] text-[#1B52E0]">
-              <span className="text-[1rem]">#</span>100
+              10,000<span className="text-[1rem] font-bold">+</span>
             </h1>
-            <p className="text-[#5C6066]">CONSULTANCY</p>
+            <p className="text-[#5C6066] font-bold">Students Abroad</p>
           </div>
         </div>
       </div>

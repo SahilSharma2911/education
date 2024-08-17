@@ -78,11 +78,11 @@ const Faq = () => {
   return (
     <div className="w-full my-[3rem]">
       <div className="space-y-1.5">
-        <h1 className="text-center font-poppins text-[#1F94F3] font-bold text-[2rem] border-b-[3px] border-[#1F94F3] w-fit mx-auto px-1 pb-1">
+        <h1 className="text-center font-poppins text-[#1F94F3] font-bold text-[22px] md:text-[30px] leading-[33.6px] md:mb-2 border-b-[3px] border-[#1F94F3] w-fit mx-auto px-1 pb-1">
           FAQ
         </h1>
       </div>
-      <div className="w-9/12 lg:item-center lg:flex lg:flex-row lg:justify-between mx-auto mt-[5rem]">
+      <div className="w-9/12 lg:item-center lg:flex lg:flex-row lg:justify-between mx-auto mt-[2rem] md:mt-[4rem]">
         <div className="space-y-8 w-full">
           {faqData.map(({ id, question, answer }) => (
             <div key={id} className="flex justify-between">

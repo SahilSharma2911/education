@@ -14,26 +14,35 @@ const WhoAre = () => {
         </div>
         <div className="w-full lg:justify-between lg:flex-row flex flex-col-reverse my-[2rem] mt-4 md:mt-12">
           <div className="lg:w-6/12 font-jost lg:text-left text-center py-4 text-[#5C6066] leading-[20px] md:leading-[23px] mt-2 md:mt-0">
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry&apos;s standard dummy
-              text ever since the 1500s, when an unknown printer took a galley
-              of type and scrambled it to make a type specimen book. Lorem Ipsum
-              is simply dummy text of the printing and typesetting industry.
-              Lorem Ipsum has been the industry&apos;s standard dummy text ever
-              since the 1500s, when an unknown printer took a galley of type and
-              scrambled it to make a type specimen book. Lorem Ipsum is simply
-              dummy text of the printing and typesetting industry. Lorem Ipsum
-              has been the industry&apos;s standard dummy text ever since the
-              1500s, when an unknown printer took a galley of type and scrambled
-              it to make a type specimen book.
-            </p>
+            <span className="space-y-5">
+              <p>
+                At Career Thrive, we take pride in guiding aspiring students and
+                their parents on their educational journeys. Our primary focus
+                is counseling students seeking to study overseas, ensuring they
+                receive the best guidance every step of the way. We have
+                partnered with industry leaders like KC Overseas, Edu World
+                International, and SI-UK International to bring comprehensive
+                support to our clients.
+              </p>
+              <p>
+                As a one-stop solution, we offer a full suite of services,
+                including study loans, foreign exchange, visa assistance, flight
+                bookings, insurance, accommodation arrangements, and more—for
+                both students and parents.
+              </p>
+              <p>
+                In addition to our student-focused offerings, we also provide
+                retail foreign exchange services, travel solutions (including
+                tickets, visas, and holiday packages), and life and general
+                insurance for a wide range of customers.
+              </p>
+            </span>
           </div>
           <div className=" lg:w-5/12 mt-3">
             <img
               src={"/Images/whoareimg.jpeg"}
               alt="img"
-              className=" rounded-xl shadow-xl"
+              className=" rounded-xl"
             />
           </div>
         </div>
