@@ -32,7 +32,7 @@ const Header = () => {
   };
 
   return (
-    <div className="w-full relative">
+    <header className="w-full relative font-poppins">
       <div className="">
         <Image
           src={"/Images/homeBanner.png"}
@@ -56,22 +56,22 @@ const Header = () => {
           {headerData.map((el) => (
             <div
               key={el.id}
-              className=" space-y-5  md:mt-6 md:space-y-5 mt-1 lg:mt-[5rem]"
+              className=" space-y-5 md:mt-6 md:space-y-5 mt-0 lg:mt-[5rem]"
             >
-              <h1 className=" text-[0.8rem] lg:text-[1.9rem] font-bold font-poppins">
+              <h1 className=" text-[1rem] lg:text-[1.9rem] font-bold font-poppins">
                 {el.title}
               </h1>
-              <p className=" text-[0.6rem] font-jost lg:text-[1.1rem]">
+              <p className=" text-[0.8rem] font-jost lg:text-[1.1rem]">
                 {el.description}
               </p>
-              <button className=" bg-[#1F94F3] hover:bg-[#077bda] px-[0.9rem] text-[0.5rem] rounded-3xl py-1  lg:text-[1.2rem] ">
+              <button className=" bg-[#1F94F3] hover:bg-[#077bda] rounded-3xl py-3 px-8 text-[12px] md:text-[14px] font-semibol w-fit">
                 Enquire Now
               </button>
             </div>
           ))}
         </Slider>
       </div>
-    </div>
+    </header>
   );
 };
 

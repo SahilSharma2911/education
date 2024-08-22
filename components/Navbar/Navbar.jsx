@@ -52,37 +52,53 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-[100vw] h-auto relative">
-      <div className="topNav text-white font-bold w-full bg-[#1C1F2A] py-1.5 text-[0.8rem] hidden md:flex justify-end">
+    <header className="w-[100vw] h-auto relative">
+      <nav className="topNav text-white font-bold w-full bg-[#1C1F2A] py-1.5 text-[0.8rem] hidden md:flex justify-end">
         <ul className="font-inria flex justify-end px-8 gap-4">
-          <Link href="/">News & Articles</Link>|<Link href="/">Facebook</Link>|
-          <Link href="/">Instagram</Link>| <Link href="/">X</Link>
+          <li>
+            <Link href="/">News & Articles</Link>
+          </li>
+          <li>|</li>
+          <li>
+            <Link href="/">Facebook</Link>
+          </li>
+          <li>|</li>
+          <li>
+            <Link href="/">Instagram</Link>
+          </li>
+          <li>|</li>
+          <li>
+            <Link href="/">X</Link>
+          </li>
         </ul>
-      </div>
+      </nav>
 
       {/* Main Navbar section */}
       <div className="w-11/12 py-3 flex justify-between mx-auto items-center relative">
-        {/* Left section */}
-        <div className="flex gap-[4rem] items-center">
-          {/* Logo */}
-          <Link href={"/"}>
-            <img src={"/Images/logo.png"} alt="Logo" />
+        <div className="flex gap-[4rem] xl:gap-[8rem] items-center">
+          <Link href={"/"} aria-label="Home">
+            <img
+              src={"/Images/logo2.png"}
+              alt="Career Thrive Logo"
+              className="w-[4.5rem]"
+            />
           </Link>
-
           {/* Pages list */}
-          <ul className="list lg:flex xl:gap-[3rem] lg:gap-3 lg:text-[14px] hidden relative">
+          <ul className="list lg:flex gap-[2rem] xl:gap-[3rem]  lg:text-[14px] hidden relative">
             {Object.keys(linkNames).map((path, index) => (
-              <Link
-                key={path}
-                href={path}
-                ref={(el) => (linksRef.current[index] = el)}
-                className={`relative top-[2px] ${
-                  activeLink === path ? "text-[#1F94F3]" : ""
-                }`}
-                onClick={() => handleLinkClick(path)}
-              >
-                {linkNames[path]}
-              </Link>
+              <li key={path} ref={(el) => (linksRef.current[index] = el)}>
+                <Link
+                  key={path}
+                  href={path}
+                  ref={(el) => (linksRef.current[index] = el)}
+                  className={`relative top-[2px] ${
+                    activeLink === path ? "text-[#1F94F3]" : ""
+                  }`}
+                  onClick={() => handleLinkClick(path)}
+                >
+                  {linkNames[path]}
+                </Link>
+              </li>
             ))}
             {/* Blue bar */}
             <div
@@ -92,7 +108,6 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* Right section */}
         <div className="hidden lg:flex items-center justify-center w-fit">
           <button className="lg:px-[12px] text-[12px] font-semibold py-3 rounded-3xl text-white bg-[#1F94F3] hover:bg-[#077bda] font-poppins w-[13rem]">
             Help Me Study Abroad
@@ -106,7 +121,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile menu section */}
-      <div
+      <nav
         className={`w-full overflow-hidden transition-max-height duration-500 ease-in-out bg-gray-100 ${
           isOpen ? "h-[100vh] opacity-100" : "h-0 opacity-0"
         }`}
@@ -133,8 +148,8 @@ const Navbar = () => {
             Help Me Study Abroad
           </button>
         </div>
-      </div>
-    </div>
+      </nav>
+    </header>
   );
 };
 

@@ -75,9 +75,9 @@ const SliderComponent = () => {
   return (
     <section id="slider" className="pt-8 pb-20 mx-auto">
       <div className="mx-auto">
-        <h1 className="font-bold text-[22px] md:text-[30px] leading-[33.6px] md:mb-2 text-center text-[#FED425]">
+        <h2 className="font-bold text-[22px] md:text-[30px] leading-[33.6px] md:mb-2 text-center text-[#FED425]">
           <b>TESTIMONIALS</b>
-        </h1>
+        </h2>
         <p className="font-jost text-center text-white text-[14px] md:text-[16px]">
           What Our Students Say
         </p>

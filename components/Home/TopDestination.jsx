@@ -16,13 +16,13 @@ const TopDestination = () => {
   };
 
   return (
-    <div className="w-[100vw] h-auto my-[3rem] md:my-[4rem]">
+    <section className="w-[100vw] h-auto my-[3rem] md:my-[4rem]">
       <div className="w-10/12 mx-auto">
         {/* heading section */}
         <div className="space-y-2 md:space-y-3">
-          <h1 className="text-center font-poppins text-[#1F94F3] font-bold text-[22px] md:text-[30px] leading-[33.6px] md:mb-2">
+          <h2 className="text-center font-poppins text-[#1F94F3] font-bold text-[22px] md:text-[30px] leading-[33.6px] md:mb-2">
             TOP 5 STUDY ABROAD DESTINATIONS
-          </h1>
+          </h2>
           <p className="font-jost text-center text-[#5C6066] text-[14px] md:text-[16px]">
             Where do you want to study?
           </p>
@@ -44,7 +44,7 @@ const TopDestination = () => {
               <div>
                 <img src={flag.src} alt={flag.text} />
               </div>
-              <h1 className="font-bold">{flag.text}</h1>
+              <h3 className="font-bold">{flag.text}</h3>
             </div>
           ))}
         </div>
@@ -66,13 +66,13 @@ const TopDestination = () => {
                 <div>
                   <img src={flag.src} alt={flag.text} />
                 </div>
-                <h1 className="font-bold">{flag.text}</h1>
+                <h3 className="font-bold">{flag.text}</h3>
               </div>
             ))}
           </Slider>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -5,7 +5,7 @@ const UniCard = ({ badge, title, description, imageURL }) => {
     <div>
       <div className=" w-[284px]  flex flex-col h-[226px] border-[2px] border-black box-border rounded-md">
         <div className="w-full min-h-[105px] bg-white flex items-center">
-          <img src={imageURL} alt="img" className=""/>
+          <img src={imageURL} alt="img" className="" />
         </div>
         <div className=" flex flex-col w-full h-full bg-[#1F94F3] p-3 text-white relative">
           <h1 className="font-semibold text-[14px] leading-[21px]">{title}</h1>

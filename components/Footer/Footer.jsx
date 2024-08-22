@@ -1,20 +1,17 @@
+"use client";
 import Link from "next/link";
-import { FaInstagram } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa6";
-import { FaLinkedin } from "react-icons/fa6";
+import { FaInstagram, FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className=" sticky w-[100vw] h-auto bg-[#1C1F2A] text-white">
-      <div className="w-10/12 mx-auto lg:flex-row md:justify-between flex flex-col gap-12 xl:gap-28 justify-between py-[2rem]">
-        {/* left section  */}
-
-        <div className=" lg:w-8/12 flex flex-col gap-10 font-jost">
+    <footer className="sticky w-full bg-[#1C1F2A] text-white">
+      <div className="w-10/12 mx-auto lg:flex-row md:justify-between flex flex-col gap-12 xl:gap-28 justify-between py-8">
+        {/* Left section */}
+        <div className="lg:w-8/12 flex flex-col gap-10 font-jost">
           <Link href={"/"}>
             <img
               src={"/Images/footlogo.png"}
-              alt="logo"
+              alt="Career Thrive logo"
               width={210}
               height={56}
             />
@@ -30,30 +27,32 @@ const Footer = () => {
               engine helps over 8 million students connect with some of the best
               universities and schools around the world.
             </p>
-            <ul className=" md:flex-row md:text-[1rem] hidden lg:flex flex-col gap-5 my-4 mt-10 ">
-              <li className=" underline">
-                <Link href={"/"}>Home</Link>{" "}
-              </li>
-              <li className=" underline">
-                <Link href={"/services"}>Services</Link>{" "}
-              </li>
-              <li className=" underline">
-                <Link href={"/about"}>About Us</Link>{" "}
-              </li>
-              <li className=" underline">
-                <Link href={"/contact"}>Contact Us</Link>{" "}
-              </li>
-              <li className=" underline">
-                <Link href={"/universities"}>Universities</Link>{" "}
-              </li>
-              <li className=" underline">
-                <Link href={"/testimonial"}>Testimonials</Link>{" "}
-              </li>
-            </ul>
+            <nav>
+              <ul className="md:flex-row md:text-[1rem] hidden lg:flex flex-col gap-5 my-4 mt-10">
+                <li className="underline">
+                  <Link href={"/"}>Home</Link>
+                </li>
+                <li className="underline">
+                  <Link href={"/services"}>Services</Link>
+                </li>
+                <li className="underline">
+                  <Link href={"/about"}>About Us</Link>
+                </li>
+                <li className="underline">
+                  <Link href={"/contact"}>Contact Us</Link>
+                </li>
+                <li className="underline">
+                  <Link href={"/universities"}>Universities</Link>
+                </li>
+                <li className="underline">
+                  <Link href={"/testimonial"}>Testimonials</Link>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
 
-        {/* Right section  */}
+        {/* Right section */}
         <div className="font-jost lg:w-4/12 flex flex-col justify-center relative -mt-5">
           <h3 className="font-bold text-[14px] md:text-[20px] leading-[28px]">
             Get your counseling pathway
@@ -64,53 +63,92 @@ const Footer = () => {
           >
             <input
               type="email"
-              placeholder="Email"
+              placeholder="Enter your email to get the PDF"
               className="border border-[#CBD6E2] rounded-l-lg w-full outline-none text-black py-2.5 px-4"
             />
             <button
-              type="submit"
-              className="bg-blue-500 hover:bg-blue-600 mx-auto text-white rounded-r-lg py-2.5 px-8"
+              type="button"
+              onClick={() => {
+                const emailInput = document.querySelector(
+                  'input[type="email"]'
+                );
+                const email = emailInput.value;
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if (emailPattern.test(email)) {
+                  window.open("/Images/sample.pdf", "_blank");
+                } else {
+                  alert("Please enter a valid email address.");
+                }
+              }}
+              className="bg-blue-500 hover:bg-blue-600 text-white rounded-r-lg py-2.5 px-8"
             >
-              Email
+              Get
             </button>
           </form>
-          <ul className=" md:flex-row md:text-[1rem] flex lg:hidden flex-col gap-5 my-4 mt-10 ">
-            <li className=" underline">
-              <Link href={"/"}>Home</Link>{" "}
-            </li>
-            <li className=" underline">
-              <Link href={"/services"}>Services</Link>{" "}
-            </li>
-            <li className=" underline">
-              <Link href={"/about"}>About Us</Link>{" "}
-            </li>
-            <li className=" underline">
-              <Link href={"/contact"}>Contact Us</Link>{" "}
-            </li>
-            <li className=" underline">
-              <Link href={"/universities"}>Universities</Link>{" "}
-            </li>
-            <li className=" underline">
-              <Link href={"/testimonial"}>Testimonials</Link>{" "}
-            </li>
-          </ul>
+          <nav>
+            <ul className="md:flex-row md:text-[1rem] flex lg:hidden flex-col gap-5 my-4 mt-10">
+              <li className="underline">
+                <Link href={"/"}>Home</Link>
+              </li>
+              <li className="underline">
+                <Link href={"/services"}>Services</Link>
+              </li>
+              <li className="underline">
+                <Link href={"/about"}>About Us</Link>
+              </li>
+              <li className="underline">
+                <Link href={"/contact"}>Contact Us</Link>
+              </li>
+              <li className="underline">
+                <Link href={"/universities"}>Universities</Link>
+              </li>
+              <li className="underline">
+                <Link href={"/testimonial"}>Testimonials</Link>
+              </li>
+            </ul>
+          </nav>
           <ul className="lg:absolute flex gap-4 bottom-2 right-0 mt-4 md:mt-6">
             <li>
-              <FaInstagram className=" text-[2rem]" />
+              <Link
+                href="https://www.instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaInstagram className="text-[2rem]" />
+              </Link>
             </li>
             <li>
-              <FaFacebook className=" text-[2rem]" />
+              <Link
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaFacebook className="text-[2rem]" />
+              </Link>
             </li>
             <li>
-              <FaTwitter className=" text-[2rem]" />
+              <Link
+                href="https://www.twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaTwitter className="text-[2rem]" />
+              </Link>
             </li>
             <li>
-              <FaLinkedin className=" text-[2rem]" />
+              <Link
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin className="text-[2rem]" />
+              </Link>
             </li>
           </ul>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

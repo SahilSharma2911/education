@@ -2,13 +2,13 @@ import React from "react";
 
 const WhyChoose = () => {
   return (
-    <div className="w-[100vw] h-auto mt-[3.5rem] md:mt-[3rem] mb-[3rem]">
+    <section className="w-[100vw] h-auto mt-[3.5rem] md:mt-[3rem] mb-[3rem]">
       <div className="w-10/12 mx-auto">
         {/* Heading section */}
         <div className="space-y-1.5">
-          <h1 className="text-center font-poppins text-[#1F94F3] font-bold text-[22px] md:text-[30px] leading-[33.6px] md:mb-2">
+          <h2 className="text-center font-poppins text-[#1F94F3] font-bold text-[22px] md:text-[30px] leading-[33.6px] md:mb-2">
             WHY CHOOSE US
-          </h1>
+          </h2>
           <p className="font-jost text-center text-[#5C6066] text-[14px] md:text-[16px]">
             Endless possibilities begin here
           </p>
@@ -65,14 +65,14 @@ const WhyChoose = () => {
                 {/* Image */}
                 <img
                   src={item.src}
-                  alt=""
+                  alt="##"
                   className="rounded-xl w-full h-full object-cover transition-transform duration-500 transform hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black opacity-40 rounded-xl pointer-events-none"></div>
                 {/* Text content */}
                 <div className="absolute bottom-0 p-4 text-white z-10">
                   {item.text && <p className="font-jost">{item.text}</p>}
-                  <h1 className="text-[2rem] font-inria">{item.number}</h1>
+                  <h3 className="text-[2rem] font-inria">{item.number}</h3>
                   <p className="font-jost">{item.subtext}</p>
                 </div>
               </div>
@@ -80,7 +80,7 @@ const WhyChoose = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -2,12 +2,12 @@ import React from "react";
 
 const WhoAre = () => {
   return (
-    <div className="w-[100vw] h-auto">
+    <section className="w-[100vw] h-auto">
       <div className="w-10/12 mx-auto  md:pb-[2rem] pt-[3rem] md:pt-[4rem]">
         <div>
-          <h1 className="text-center font-poppins text-[#1F94F3] font-bold text-[22px] md:text-[30px] leading-[33.6px] md:mb-2">
+          <h2 className="text-center font-poppins text-[#1F94F3] font-bold text-[22px] md:text-[30px] leading-[33.6px] md:mb-2">
             WHO WE ARE
-          </h1>
+          </h2>
           <p className="font-jost text-center text-[#5C6066] text-[14px] md:text-[16px]">
             Road Map to Study Abroad
           </p>
@@ -47,7 +47,7 @@ const WhoAre = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

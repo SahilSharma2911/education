@@ -25,11 +25,11 @@ const universities = [
 
 const University = () => {
   return (
-    <div className="w-full h-auto md:my-[3rem] px-[1rem]">
+    <section className="w-full h-auto md:my-[3rem] px-[1rem]">
       <div>
-        <h1 className="text-center font-poppins text-[#1F94F3] font-bold text-[22px] md:text-[24px] leading-[33.6px]">
+        <h2 className="text-center font-poppins text-[#1F94F3] font-bold text-[22px] md:text-[24px] leading-[33.6px]">
           SOME TOP RANKED UNIVERSITIES WHERE WE CAN GET YOU PLACED
-        </h1>
+        </h2>
         <p className="font-jost text-center text-[#5C6066] text-[14px] md:text-[24px] md:mt-1 leading-[42px]">
           Rankings as per QS World University Rankings 2024
         </p>
@@ -43,7 +43,7 @@ const University = () => {
             key={index}
             target="_blank"
             rel="noopener noreferrer"
-            className="transform transition-transform duration-300 hover:scale-105"
+            className="transform transition-transform duration-300 hover:scale-105 shadow-lg"
           >
             <Image
               src={university.src}
@@ -54,7 +54,7 @@ const University = () => {
           </Link>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -9,18 +9,36 @@ import HomeModal from "@/components/Modal/HomeModal";
 import Navbar from "@/components/Navbar/Navbar";
 import StoreDataProvider from "@/context/StoreContext";
 import Image from "next/image";
+import Head from "next/head";
 
 export default function Home() {
   return (
-    <main className="">
-      <Header />
-      <Counseling page="homepage" />
-      <TopDestination />
-      <WhyChoose />
-      <Testimonials />
-      <Faq />
-      {/* modal component */}
-      <HomeModal />
-    </main>
+    <>
+      <Head>
+        <title>Career Thrive | Study Abroad Counseling & Opportunities</title>
+        <meta
+          name="description"
+          content="Career Thrive helps students achieve their dreams of studying abroad by offering expert counseling, access to top universities, and testimonials from successful students."
+        />
+        <meta
+          name="keywords"
+          content="study abroad, student counseling, universities, study overseas, international education, student testimonials, educational opportunities"
+        />
+        <meta name="author" content="Career Thrive" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <main className="">
+        <Header />
+        <Counseling page="homepage" />
+        <TopDestination />
+        <WhyChoose />
+        <Testimonials />
+        <Faq />
+        {/* modal component */}
+        <HomeModal />
+      </main>
+    </>
   );
 }

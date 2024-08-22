@@ -32,7 +32,7 @@ const Card = ({ name, description, image, university, zoom, shade }) => {
             width="80px"
           />
         </div>
-        <h5 className="mt-4 text-lg font-bold text-yellow-400">{name}</h5>
+        <h4 className="mt-4 text-lg font-bold text-yellow-400">{name}</h4>
         <p className="text-sm">{university}</p>
       </div>
     </div>

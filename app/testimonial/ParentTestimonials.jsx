@@ -3,11 +3,11 @@ import { MdOutlinePlayCircle } from "react-icons/md";
 
 const ParentTestimonials = () => {
   return (
-    <div>
+    <section>
       <div className="space-y-1">
-        <h1 className="text-center font-poppins text-[#1F94F3] font-bold text-[22px] md:text-[30px] leading-[33.6px] md:mb-2">
+        <h2 className="text-center font-poppins text-[#1F94F3] font-bold text-[22px] md:text-[30px] leading-[33.6px] md:mb-2">
           PARENTS TESTIMONIALS
-        </h1>
+        </h2>
         <p className="font-jost text-center text-[#5C6066] text-[14px] md:text-[16px]">
           What Parents has to say about us
         </p>
@@ -44,7 +44,7 @@ const ParentTestimonials = () => {
           <MdOutlinePlayCircle className=" text-[8rem]" />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

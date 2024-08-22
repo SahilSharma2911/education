@@ -3,26 +3,20 @@ import { countryData } from "../../public/Images/data";
 import UniCard from "./UniCard";
 
 const AllCards = ({ country }) => {
-  function getAllCards() {
-    let all = [];
+  const getAllCards = () => {
     if (country === "All") {
-      const allCards = countryData.map((data) => data);
-      all.push(allCards);
+      return countryData;
     } else {
-      const filteredCards = countryData.filter(
-        (data) => data.badge === country
-      );
-      all.push(filteredCards);
+      return countryData.filter((data) => data.badge === country);
     }
-    return all;
-  }
+  };
 
-  console.log(getAllCards());
+  const filteredCards = getAllCards();
 
   return (
     <div className="flex flex-col">
       <div className="flex flex-wrap justify-center items-start w-10/12 mx-auto gap-5 md:gap-10">
-        {(getAllCards() && getAllCards()[0]).map((data) => (
+        {filteredCards.map((data) => (
           <UniCard
             key={data.id}
             title={data.title}
@@ -32,7 +26,10 @@ const AllCards = ({ country }) => {
           />
         ))}
       </div>
-      <button className="text-[#5C6066] leading-[42px] font-jost mx-auto mt-6 md:mt-8">
+      <button
+        className="text-[#5C6066] hover:text-black leading-[42px] font-jost mx-auto mt-6 md:mt-8"
+        onClick={() => window.open("/Images/universities.pdf", "_blank")}
+      >
         View All
       </button>
     </div>

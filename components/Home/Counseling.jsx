@@ -10,12 +10,12 @@ const Counseling = ({ page }) => {
   const { images } = useContext(StoreContext);
 
   return (
-    <div className={`w-[100vw] h-auto ${homepageStyles}`}>
+    <section className={`w-[100vw] h-auto ${homepageStyles}`}>
       <div className="w-10/12 mx-auto">
         <div className="space-y-1">
-          <h1 className="text-center font-poppins text-[#1F94F3] font-bold text-[22px] md:text-[30px] leading-[33.6px] md:mb-2">
+          <h2 className="text-center font-poppins text-[#1F94F3] font-bold text-[22px] md:text-[30px] leading-[33.6px] md:mb-2">
             THE COUNSELING PROCESS
-          </h1>
+          </h2>
           <p className="font-jost text-center text-[#5C6066] text-[14px] md:text-[16px]">
             Professional-Streamlined-Simple
           </p>
@@ -51,7 +51,7 @@ const Counseling = ({ page }) => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

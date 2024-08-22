@@ -76,18 +76,18 @@ const Faq = () => {
   });
 
   return (
-    <div className="w-full my-[3rem]">
+    <section className="w-full my-[3rem]">
       <div className="space-y-1.5">
-        <h1 className="text-center font-poppins text-[#1F94F3] font-bold text-[22px] md:text-[30px] leading-[33.6px] md:mb-2 border-b-[3px] border-[#1F94F3] w-fit mx-auto px-1 pb-1">
+        <h2 className="text-center font-poppins text-[#1F94F3] font-bold text-[22px] md:text-[30px] leading-[33.6px] md:mb-2 border-b-[3px] border-[#1F94F3] w-fit mx-auto px-1 pb-1">
           FAQ
-        </h1>
+        </h2>
       </div>
       <div className="w-9/12 lg:item-center lg:flex lg:flex-row lg:justify-between mx-auto mt-[2rem] md:mt-[4rem]">
         <div className="space-y-8 w-full">
           {faqData.map(({ id, question, answer }) => (
             <div key={id} className="flex justify-between">
               <div>
-                <h1 className="font-heading font-semibold">{question}</h1>
+                <h3 className="font-heading font-semibold">{question}</h3>
                 <div style={getContentStyle(openFaqs[id])}>
                   <p className="font-text mt-3 w-10/12">{answer}</p>
                 </div>
@@ -101,7 +101,7 @@ const Faq = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -3,12 +3,13 @@ import React from "react";
 
 const OurHeader = ({ title }) => {
   return (
-    <div className="font-jost font-bold bg-center relative flex justify-center items-center  w-[100vw] md:h-[70vh]">
+    <header className="font-jost font-bold bg-center relative flex justify-center items-center  w-[100vw] md:h-[70vh]">
       <Image
         src={"/Images/banner.jpeg"}
         width={2500}
         height={2500}
         className="w-[100vw] h-full hidden md:flex object-cover"
+        alt="Banner"
       />
       <Image
         src={"/Images/banner-crop.jpeg"}
@@ -21,7 +22,7 @@ const OurHeader = ({ title }) => {
         {title}
       </span>
       <div className=" absolute top-0 left-0 bg-black w-full h-full  opacity-50 "></div>
-    </div>
+    </header>
   );
 };
 

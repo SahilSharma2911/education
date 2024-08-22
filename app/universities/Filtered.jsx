@@ -3,14 +3,15 @@ import { filterCountry } from "../../public/Images/data";
 
 const Filtered = ({ country, setCountry }) => {
   return (
-    <div className=" flex flex-col lg:flex-row gap-3 font-poppins items-center">
+    <div className="flex flex-col lg:flex-row gap-3 font-poppins items-center">
       <div className="text-[20px] font-bold">
-        <h1>Country:</h1>
+        <h2>Country:</h2>
       </div>
       <div className="flex">
         {filterCountry.map((data, index) => (
           <button
             key={data.id}
+            aria-label={`Filter by ${data.country}`}
             className={`px-1 md:px-4 py-2 text-[14px] border border-black ${
               index === 0 ? "rounded-l-lg" : ""
             } ${
