@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { LiaTimesSolid } from "react-icons/lia";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const HomeModal = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -33,10 +35,12 @@ const HomeModal = () => {
     );
 
     if (response.ok) {
-      alert("Your message was successfully sent!");
+      toast.success("Thank you! You've successfully signed up", {
+        className: "custom-toast",
+      });
       setIsOpen(false);
     } else {
-      alert("There was an issue submitting your data. Please try again.");
+      toast.error("There was an issue submitting your data. Please try again.");
     }
   };
 
@@ -44,7 +48,8 @@ const HomeModal = () => {
 
   return (
     <section className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 md:py-4 lg:m-0 px-[0.2rem] lg:px-0 lg:pr-20">
-      <div className="relative p-4 lg:w-[800px] h-fit lg:h-[550px] flex flex-col lg:flex-row items-center justify-center overflow-hidden ">
+      {/* Modal Content */}
+      <div className="relative p-4 lg:w-[800px] h-fit lg:h-[550px] flex flex-col lg:flex-row items-center justify-center overflow-hidden">
         {/* Close Button */}
         <button
           onClick={closeModal}

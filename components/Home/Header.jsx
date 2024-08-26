@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import Image from "next/image";
 import { StoreContext } from "@/context/StoreContext";
 import "./Header.css";
+import Link from "next/link";
 
 const Header = () => {
   const { headerData } = useContext(StoreContext);
@@ -56,7 +57,7 @@ const Header = () => {
           {headerData.map((el) => (
             <div
               key={el.id}
-              className=" space-y-5 md:mt-6 md:space-y-5 mt-0 lg:mt-[5rem]"
+              className=" space-y-4 md:mt-6 md:space-y-5 mt-0 lg:mt-[5rem]"
             >
               <h1 className=" text-[1rem] lg:text-[1.9rem] font-bold font-poppins">
                 {el.title}
@@ -64,9 +65,11 @@ const Header = () => {
               <p className=" text-[0.8rem] font-jost lg:text-[1.1rem]">
                 {el.description}
               </p>
-              <button className=" bg-[#1F94F3] hover:bg-[#077bda] rounded-3xl py-3 px-8 text-[12px] md:text-[14px] font-semibol w-fit">
-                Enquire Now
-              </button>
+              <Link href={"/contact"}>
+                <button className=" bg-[#1F94F3] hover:bg-[#077bda] rounded-3xl py-2 md:py-3 px-8 text-[12px] md:text-[14px] font-semibol w-full md:w-fit mt-6">
+                  Enquire Now
+                </button>
+              </Link>
             </div>
           ))}
         </Slider>

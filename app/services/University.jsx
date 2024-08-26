@@ -30,7 +30,7 @@ const University = () => {
         <h2 className="text-center font-poppins text-[#1F94F3] font-bold text-[22px] md:text-[24px] leading-[33.6px]">
           SOME TOP RANKED UNIVERSITIES WHERE WE CAN GET YOU PLACED
         </h2>
-        <p className="font-jost text-center text-[#5C6066] text-[14px] md:text-[24px] md:mt-1 leading-[42px]">
+        <p className="font-jost text-center text-[#5C6066] text-[14px] md:text-[24px] md:mt-1 leading-[20.2px] md:leading-[42px] mt-4">
           Rankings as per QS World University Rankings 2024
         </p>
       </div>

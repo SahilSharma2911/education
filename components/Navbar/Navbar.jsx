@@ -109,9 +109,11 @@ const Navbar = () => {
         </div>
 
         <div className="hidden lg:flex items-center justify-center w-fit">
-          <button className="lg:px-[12px] text-[12px] font-semibold py-3 rounded-3xl text-white bg-[#1F94F3] hover:bg-[#077bda] font-poppins w-[13rem]">
-            Help Me Study Abroad
-          </button>
+          <Link href={"/services"}>
+            <button className="lg:px-[12px] text-[12px] font-semibold py-3 rounded-3xl text-white bg-[#1F94F3] hover:bg-[#077bda] font-poppins w-[13rem]">
+              Help Me Study Abroad
+            </button>
+          </Link>
         </div>
 
         {/* Burger icon */}
@@ -144,9 +146,15 @@ const Navbar = () => {
         </div>
         {/* Buttons */}
         <div className="flex items-center justify-center w-full p-8">
-          <button className="px-[3rem] py-3 rounded-3xl w-full text-white bg-[#1F94F3] hover:bg-[#077bda] font-poppins">
-            Help Me Study Abroad
-          </button>
+          <Link
+            href={"/services"}
+            onClick={() => handleLinkClick("services")}
+            className="w-full"
+          >
+            <button className="px-[3rem] py-3 rounded-3xl w-full text-white bg-[#1F94F3] hover:bg-[#077bda] font-poppins">
+              Help Me Study Abroad
+            </button>
+          </Link>
         </div>
       </nav>
     </header>

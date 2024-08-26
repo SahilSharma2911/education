@@ -1,8 +1,13 @@
 "use client";
+import React, { useRef } from "react";
 import Link from "next/link";
 import { FaInstagram, FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Footer = () => {
+  const emailInputRef = useRef(null);
+
   return (
     <footer className="sticky w-full bg-[#1C1F2A] text-white">
       <div className="w-10/12 mx-auto lg:flex-row md:justify-between flex flex-col gap-12 xl:gap-28 justify-between py-8">
@@ -10,10 +15,11 @@ const Footer = () => {
         <div className="lg:w-8/12 flex flex-col gap-10 font-jost">
           <Link href={"/"}>
             <img
-              src={"/Images/footlogo.png"}
+              src={"/Images/logo2.png"}
               alt="Career Thrive logo"
-              width={210}
-              height={56}
+              width={100}
+              height={100}
+              className="-ml-[20px] md:-ml-[26px] mt-2 md:mt-4"
             />
           </Link>
           <div>
@@ -63,22 +69,20 @@ const Footer = () => {
           >
             <input
               type="email"
+              ref={emailInputRef}
               placeholder="Enter your email to get the PDF"
               className="border border-[#CBD6E2] rounded-l-lg w-full outline-none text-black py-2.5 px-4"
             />
             <button
               type="button"
               onClick={() => {
-                const emailInput = document.querySelector(
-                  'input[type="email"]'
-                );
-                const email = emailInput.value;
+                const email = emailInputRef.current.value;
                 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-                if (emailPattern.test(email)) {
+                if (email && emailPattern.test(email)) {
                   window.open("/Images/sample.pdf", "_blank");
                 } else {
-                  alert("Please enter a valid email address.");
+                  toast.error("Please enter a valid email address.");
                 }
               }}
               className="bg-blue-500 hover:bg-blue-600 text-white rounded-r-lg py-2.5 px-8"

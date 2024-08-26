@@ -5,6 +5,8 @@ import { Inter } from "next/font/google";
 import Head from "next/head";
 import "./globals.css";
 import Whatsapp from "@/components/FloatingIcon/Whatsapp";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,6 +36,7 @@ export default function RootLayout({ children }) {
           {children}
           <Whatsapp />
           <Footer />
+          <ToastContainer position="top-center" />
         </StoreDataProvider>
       </body>
     </html>

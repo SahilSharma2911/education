@@ -1,17 +1,32 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { testimonial } from "../../public/Images/data";
 import Card from "../Card/Card";
+import Image from "next/image";
 
 const SliderComponent = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [showArrows, setShowArrows] = useState(false);
+  const [showDots, setShowDots] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setShowArrows(window.innerWidth >= 1024);
+      setShowDots(window.innerWidth <= 1024);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const settings = {
-    dots: true,
-    arrows: false,
+    arrows: showArrows,
+    dots: showDots,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
@@ -70,10 +85,16 @@ const SliderComponent = () => {
         </ul>
       </div>
     ),
+    prevArrow: showArrows && (
+      <Image src="/Images/left-ta.png" width={40} height={40} alt="Previous" />
+    ),
+    nextArrow: showArrows && (
+      <Image src="/Images/right-ta.png" width={40} height={40} alt="Next" />
+    ),
   };
 
   return (
-    <section id="slider" className="pt-8 pb-20 mx-auto">
+    <section id="slider" className="pt-10 pb-10 mx-auto">
       <div className="mx-auto">
         <h2 className="font-bold text-[22px] md:text-[30px] leading-[33.6px] md:mb-2 text-center text-[#FED425]">
           <b>TESTIMONIALS</b>
@@ -81,7 +102,7 @@ const SliderComponent = () => {
         <p className="font-jost text-center text-white text-[14px] md:text-[16px]">
           What Our Students Say
         </p>
-        <div className="slider my-6 px-4 lg:px-10 xl:px-14">
+        <div className="slider mt-8 mb-14 lg:mb-0 lg:mt-8 px-4 lg:px-10 xl:px-14">
           <Slider {...settings}>
             {testimonial.map((item, index) => {
               const isZoomed =
@@ -107,6 +128,9 @@ const SliderComponent = () => {
                     university={item.school}
                     zoom={isZoomed}
                     shade={shade}
+                    linkedinUrl={item.linkedinUrl}
+                    googlePlusUrl={item.googlePlusUrl}
+                    imageUrl={item.imageUrl}
                   />
                 </div>
               );

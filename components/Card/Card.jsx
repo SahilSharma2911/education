@@ -6,7 +6,17 @@ import {
   FaQuoteLeft,
 } from "react-icons/fa";
 
-const Card = ({ name, description, image, university, zoom, shade }) => {
+const Card = ({
+  name,
+  description,
+  image,
+  university,
+  zoom,
+  shade,
+  linkedinUrl,
+  googlePlusUrl,
+  imageUrl,
+}) => {
   return (
     <div
       className={`slider-card mx-4 xl:mx-8 2xl:mx-10 ${shade} bg-[#122B6B] text-white rounded-xl p-6 relative shadow-lg transition-transform duration-300 ${
@@ -19,14 +29,20 @@ const Card = ({ name, description, image, university, zoom, shade }) => {
       <div className="absolute top-4 left-4 text-yellow-400 text-3xl"></div>
       <p className="mt-10 text-sm">{description}</p>
       <div className="mt-4 flex justify-center space-x-8 text-yellow-400">
-        <FaLinkedin className="text-2xl cursor-pointer" />
-        <FaGooglePlusG className="text-2xl cursor-pointer" />
-        <FaImage className="text-2xl cursor-pointer" />
+        <a href={linkedinUrl} target="_blank" rel="noopener noreferrer">
+          <FaLinkedin className="text-2xl cursor-pointer" />
+        </a>
+        <a href={googlePlusUrl} target="_blank" rel="noopener noreferrer">
+          <FaGooglePlusG className="text-2xl cursor-pointer" />
+        </a>
+        <a href={imageUrl} target="_blank" rel="noopener noreferrer">
+          <FaImage className="text-2xl cursor-pointer" />
+        </a>
       </div>
       <div className="mt-4 flex flex-col items-center">
         <div className="w-20">
           <img
-            className="rounded-full border-2 border-white"
+            classclassName="rounded-full border-2 border-white"
             src={`/Images/${image}`}
             alt={name}
             width="80px"

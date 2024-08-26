@@ -21,17 +21,20 @@ const AllTestimonials = () => {
             description={item.description}
             image={item.img}
             university={item.school}
+            linkedinUrl={item.linkedinUrl}
+            googlePlusUrl={item.googlePlusUrl}
+            imageUrl={item.imageUrl}
           />
         ))}
       </div>
-      <div className=" flex">
+      {/* <div className=" flex">
         <button
           type="submit"
           className="bg-blue-500 hover:bg-blue-600 mx-auto text-white px-8 py-4 text-[16px] leading-[16px] rounded-xl -mt-2 md:mt-4"
         >
           Load More
         </button>
-      </div>
+      </div> */}
     </section>
   );
 };

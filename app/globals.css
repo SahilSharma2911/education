@@ -19,6 +19,22 @@ body {
     animation: fadeIn 0.4s ease-in-out;
 }
 
+.custom-toast {
+    background-color: white !important;
+    color: black !important;
+}
+
+.custom-toast .Toastify__toast-icon svg {
+    fill: #1F94F3 !important;
+}
+
+.custom-toast .Toastify__progress-bar {
+    background-color: #1F94F3 !important;
+}
+
+.custom-toast .Toastify__progress-bar--animated {
+    background: #87CEFA !important;
+}
 
 @keyframes fadeIn {
     0% {

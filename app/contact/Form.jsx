@@ -9,6 +9,9 @@ import {
   FaTwitter,
   FaLinkedinIn,
 } from "react-icons/fa";
+import { indianStatesAndUTs } from "../../public/Images/data";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -31,6 +34,19 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Validate form
+    if (
+      !formData.firstName ||
+      !formData.lastName ||
+      !formData.email ||
+      !formData.phone ||
+      !formData.state ||
+      !formData.message
+    ) {
+      toast.error("Please fill out all required fields.");
+      return;
+    }
+
     fetch(
       "https://script.google.com/macros/s/AKfycbw3eDOoh3yEuXOgvv6YvGlu4m7I670aAXgs2yz6PGMQJyao2K42C4r0eee2WFXD1nwk/exec",
       {
@@ -49,17 +65,15 @@ const Form = () => {
           subject: "",
           message: "",
         });
-        // Check for exact success message or status
-        if (result.trim() === "Success") {
-          // alert("Your message has been sent successfully!");
-          // Clear the form data
-        } else {
-          // alert("There was an error sending your message. Please try again.");
-        }
+        toast.success("Your message has been sent successfully!", {
+          className: "custom-toast",
+        });
       })
       .catch((error) => {
         console.error("Error:", error);
-        // alert("There was an error sending your message. Please try again.");
+        toast.error(
+          "There was an error sending your message. Please try again."
+        );
       });
   };
 
@@ -69,13 +83,13 @@ const Form = () => {
         {/* Contact Form Section */}
         <div className="font-poppins px-[1.5rem] lg:px-0 lg:w-7/12 flex justify-center items-center w-full">
           <div className="rounded-lg w-full">
-            <p className="text-[12px] leading-[12px] text-[#142031]">
-              Send us an Email
+            <p className="text-[12px] leading-[12px] text-[#142031] text-opacity-60">
+              SEND US AN EMAIL
             </p>
             <h2 className="text-[22px] md:text-[32px] font-medium leading-[40px] md:leading-[61px] text-[#142031] mt-2 md:mt-3">
               Got a question? Ask our team!
             </h2>
-            <div className="bg-[#1F94F3] h-[2px] w-[100px] mt-2 md:mt-2.5"></div>
+            <div className="bg-[#1F94F3] h-[2px] w-[60px] md:w-[100px] mt-2 md:mt-2.5"></div>
             <p className="text-[#142031] text-[14px] md:text-[16px] leading-[20px] md:leading-[30px] mt-4 md:mt-6">
               Fill out the contact form and we will get back to you with the
               right answer.
@@ -90,7 +104,7 @@ const Form = () => {
                   type="text"
                   name="firstName"
                   placeholder="First Name*"
-                  className="border border-[#CBD6E2] p-3 rounded w-full"
+                  className="border border-[#CBD6E2] p-3 rounded w-full bg-[#F5F8FA]"
                   aria-label="First Name"
                   required
                   value={formData.firstName}
@@ -100,7 +114,7 @@ const Form = () => {
                   type="text"
                   name="lastName"
                   placeholder="Last Name*"
-                  className="border border-[#CBD6E2] p-3 rounded w-full"
+                  className="border border-[#CBD6E2] p-3 rounded w-full bg-[#F5F8FA]"
                   aria-label="Last Name"
                   required
                   value={formData.lastName}
@@ -112,7 +126,7 @@ const Form = () => {
                   type="email"
                   name="email"
                   placeholder="Email*"
-                  className="border border-[#CBD6E2] p-3 rounded w-full"
+                  className="border border-[#CBD6E2] p-3 rounded w-full bg-[#F5F8FA]"
                   aria-label="Email"
                   required
                   value={formData.email}
@@ -122,7 +136,7 @@ const Form = () => {
                   type="text"
                   name="phone"
                   placeholder="Phone*"
-                  className="border border-[#CBD6E2] p-3 rounded w-full"
+                  className="border border-[#CBD6E2] p-3 rounded w-full bg-[#F5F8FA]"
                   aria-label="Phone"
                   required
                   value={formData.phone}
@@ -132,23 +146,25 @@ const Form = () => {
               <div className="grid md:grid-cols-2 gap-4 md:gap-5">
                 <select
                   name="state"
-                  className="border border-gray-300 p-3 rounded w-full"
+                  className="border border-gray-300 p-3 rounded w-full bg-[#F5F8FA]"
                   aria-label="State of residence"
                   required
                   value={formData.state}
                   onChange={handleChange}
                 >
                   <option value="">State of residence</option>
-                  <option value="State 1">State 1</option>
-                  <option value="State 2">State 2</option>
-                  <option value="State 3">State 3</option>
-                  {/* Add more states as needed */}
+                  {indianStatesAndUTs.map((state, index) => (
+                    <option key={index} value={state}>
+                      {state}
+                    </option>
+                  ))}
                 </select>
+
                 <input
                   type="text"
                   name="subject"
                   placeholder="Subject"
-                  className="border border-[#CBD6E2] p-3 rounded w-full"
+                  className="border border-[#CBD6E2] p-3 rounded w-full bg-[#F5F8FA]"
                   aria-label="Subject"
                   value={formData.subject}
                   onChange={handleChange}
@@ -157,7 +173,7 @@ const Form = () => {
               <textarea
                 name="message"
                 placeholder="Your Message"
-                className="border border-[#CBD6E2] p-3 rounded w-full h-32"
+                className="border border-[#CBD6E2] p-3 rounded w-full h-32 bg-[#F5F8FA]"
                 aria-label="Your Message"
                 required
                 value={formData.message}
@@ -178,10 +194,10 @@ const Form = () => {
         {/* Contact Info Section */}
         <div className="w-full lg:w-4/12 bg-[#F5F8FA] lg:border-t-[#1F94F3] lg:border-t-4 px-[2rem] py-[2.5rem] space-y-[1rem] font-poppins mt-8">
           <div className="mb-10">
-            <h2 className="font-bold text-[#142031] leading-[24px]">
+            <h2 className="font-bold text-[#142031] leading-[24px] text-opacity-60">
               Get in Touch With Us
             </h2>
-            <p className="text-[12px] leading-[19.2px] mt-4 text-[#142031]">
+            <p className="text-[12px] leading-[19.2px] mt-4 text-[#142031] text-opacity-60">
               We&apos;re here to help with all your overseas education needs.
               Reach out to our team for personalized guidance, whether in person
               or online.
@@ -195,7 +211,7 @@ const Form = () => {
             </div>
             <a
               href="tel:+918422016687"
-              className="text-[12px] leading-[19.2px] hover:underline"
+              className="text-[12px] leading-[19.2px] hover:underline text-[#5F5F5F]"
             >
               +91 84220-16687
             </a>
@@ -209,7 +225,7 @@ const Form = () => {
             </div>
             <a
               href="mailto:info@careerthrive.in"
-              className="text-[12px] leading-[19.2px] hover:underline"
+              className="text-[12px] leading-[19.2px] hover:underline text-[#5F5F5F]"
             >
               info@careerthrive.in
             </a>
@@ -223,7 +239,7 @@ const Form = () => {
             </div>
             <a
               href="https://wa.me/918422016687"
-              className="text-[12px] leading-[19.2px] hover:underline"
+              className="text-[12px] leading-[19.2px] hover:underline text-[#5F5F5F]"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -238,14 +254,14 @@ const Form = () => {
               <FaMapMarkerAlt className="text-[#1F94F3]" />
             </div>
             <div className="text-[12px] leading-[19.2px]">
-              <h3 className="text-[#142031] text-[14px] leading-[27px] font-medium">
+              <h3 className="text-[#142031] text-[14px] leading-[27px] font-medium text-opacity-80">
                 Location
               </h3>
               <a
                 href="https://www.google.com/maps/search/?api=1&query=Surat+Mumbai+Pune+Bangalore+Ahmedabad"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[12px] leading-[19.2px] hover:underline"
+                className="text-[12px] leading-[19.2px] hover:underline text-[#5F5F5F]"
               >
                 Surat | Mumbai | Pune | Bangalore | Ahmedabad
                 <br /> Online sessions are also available
