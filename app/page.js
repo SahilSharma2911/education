@@ -5,6 +5,7 @@ import Header from "@/components/Home/Header";
 import Testimonials from "@/components/Home/Testimonials";
 import TopDestination from "@/components/Home/TopDestination";
 import WhyChoose from "@/components/Home/WhyChoose";
+import BeyondEducation from "@/components/Home/BeyondEducation";
 import HomeModal from "@/components/Modal/HomeModal";
 import Navbar from "@/components/Navbar/Navbar";
 import StoreDataProvider from "@/context/StoreContext";
@@ -34,6 +35,7 @@ export default function Home() {
         <Counseling page="homepage" />
         <TopDestination />
         <WhyChoose />
+        <BeyondEducation />
         <Testimonials />
         <Faq />
         {/* modal component */}
