@@ -19,7 +19,7 @@ const faqData = [
     id: 3,
     question: "How do I know if I'm eligible to study abroad?",
     answer:
-      "Eligibility depends on academic qualifications, language requirements (like IELTS/TOEFL), and financial criteria.",
+      "Academics qualification, language requirements, financial criteria has to be evaluated.",
   },
 ];
 

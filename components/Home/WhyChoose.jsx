@@ -9,9 +9,7 @@ const WhyChoose = () => {
           <h2 className="text-center font-poppins text-[#1F94F3] font-bold text-[22px] md:text-[30px] leading-[33.6px] md:mb-2">
             WHY CHOOSE US
           </h2>
-          <p className="font-jost text-center text-[#5C6066] text-[14px] md:text-[16px]">
-            Endless possibilities begin here
-          </p>
+          
           <div className="max-w-3xl mx-auto pt-2 space-y-3 text-center">
             <p className="font-jost text-[#5C6066] text-[14px] md:text-[15px] leading-relaxed">
               Career Thrive primarily caters to counselling students for their quest to study overseas and ensures they are guided in the best possible manner. Career Thrive is a one-stop solution for all student needs such as study loans, foreign exchange, visas, flight tickets, insurance, accommodation, and more—for both students and parents.

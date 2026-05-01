@@ -32,14 +32,17 @@ const cards = [
 
 const BeyondEducation = () => {
   return (
-    <section className="w-full bg-[#F0F0F0] py-[3rem] md:py-[4rem]">
-      <div className="w-10/12 mx-auto">
+    <section className="w-full py-[3.25rem] md:py-[4.5rem] bg-gradient-to-b from-[#F6FAFF] via-[#F3F7FC] to-[#F0F0F0]">
+      <div className="w-11/12 lg:w-10/12 mx-auto">
         {/* Heading */}
-        <div className="space-y-2 mb-[2.5rem] md:mb-[3rem]">
-          <h2 className="text-center font-poppins text-[#1F94F3] font-bold text-[22px] md:text-[30px] leading-[33.6px]">
-            Beyond Education: A Comprehensive Support System
+        <div className="space-y-3 mb-[2.75rem] md:mb-[3.25rem] text-center">
+          <span className="inline-flex items-center gap-2 rounded-full bg-[#E6F2FF] px-4 py-1 text-[12px] md:text-[13px] font-jost text-[#1F94F3]">
+            Beyond Education
+          </span>
+          <h2 className="font-poppins text-[#1F94F3] font-bold text-[22px] md:text-[32px] leading-[30px] md:leading-[38px]">
+            A Comprehensive Support System
           </h2>
-          <p className="font-jost text-center text-[#5C6066] text-[14px] md:text-[16px]">
+          <p className="font-jost text-[#5C6066] text-[14px] md:text-[16px] max-w-[640px] mx-auto">
             We stay with you every step of the way — before, during, and after
           </p>
         </div>
@@ -49,9 +52,9 @@ const BeyondEducation = () => {
           {cards.map(({ icon, title, text }, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-6 md:p-8 flex flex-col gap-4 shadow-sm hover:shadow-md transition-shadow duration-300"
+              className="group bg-white rounded-2xl p-6 md:p-8 flex flex-col gap-4 shadow-[0_10px_30px_rgba(24,100,171,0.08)] border border-[#E8EEF6] hover:shadow-[0_18px_45px_rgba(24,100,171,0.18)] hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-full bg-[#EBF5FE] flex items-center justify-center text-[#1F94F3] shrink-0">
+              <div className="w-12 h-12 rounded-full bg-[#EBF5FE] flex items-center justify-center text-[#1F94F3] shrink-0 ring-4 ring-[#F3F8FF] group-hover:scale-105 transition-transform duration-300">
                 {icon}
               </div>
               <h3 className="font-poppins font-semibold text-[#1F94F3] text-[16px] md:text-[18px] leading-snug">
