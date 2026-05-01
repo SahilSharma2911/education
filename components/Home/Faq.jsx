@@ -5,57 +5,21 @@ import { FaPlus, FaMinus } from "react-icons/fa6";
 const faqData = [
   {
     id: 1,
-    question: "What are the top attractions included in your tours?",
+    question: "How can I find scholarships or financial aid for studying abroad?",
     answer:
-      "Providing a detailed list of popular attractions covered in your tours can attract search queries related to those destinations. Explain the booking process clearly, including steps and any necessary information, to capture search queries about booking procedures.",
+      "Key opportunities include merit-based, need-based, and country-specific scholarships, often covering tuition, accommodation, and travel costs. Start by contacting university advisors.",
   },
   {
     id: 2,
-    question: "Do I need to make a reservation?",
+    question: "What is the cost of studying abroad?",
     answer:
-      "Providing a detailed list of popular attractions covered in your tours can attract search queries related to those destinations. Explain the booking process clearly, including steps and any necessary information, to capture search queries about booking procedures.",
+      "Studying abroad generally costs between ₹11 lakhs and ₹40 lakhs per year for Indian students, covering tuition, living expenses, and travel. It can range from ₹10 lakhs to over ₹50 lakhs depending on the country and program.",
   },
   {
     id: 3,
-    question: "Are children allowed on the tour?",
+    question: "How do I know if I'm eligible to study abroad?",
     answer:
-      "Providing a detailed list of popular attractions covered in your tours can attract search queries related to those destinations. Explain the booking process clearly, including steps and any necessary information, to capture search queries about booking procedures.",
-  },
-  {
-    id: 4,
-    question: "What safety measures are in place for tours?",
-    answer:
-      "Providing a detailed list of popular attractions covered in your tours can attract search queries related to those destinations. Explain the booking process clearly, including steps and any necessary information, to capture search queries about booking procedures.",
-  },
-  {
-    id: 5,
-    question: "Do you offer group or private tours?",
-    answer:
-      "Providing a detailed list of popular attractions covered in your tours can attract search queries related to those destinations. Explain the booking process clearly, including steps and any necessary information, to capture search queries about booking procedures.",
-  },
-  {
-    id: 6,
-    question: "What is your cancellation and refund policy?",
-    answer:
-      "Providing a detailed list of popular attractions covered in your tours can attract search queries related to those destinations. Explain the booking process clearly, including steps and any necessary information, to capture search queries about booking procedures.",
-  },
-  {
-    id: 7,
-    question: "Do you offer customized or private tours?",
-    answer:
-      "Providing a detailed list of popular attractions covered in your tours can attract search queries related to those destinations. Explain the booking process clearly, including steps and any necessary information, to capture search queries about booking procedures.",
-  },
-  {
-    id: 8,
-    question: "What are the payment options available?",
-    answer:
-      "Providing a detailed list of popular attractions covered in your tours can attract search queries related to those destinations. Explain the booking process clearly, including steps and any necessary information, to capture search queries about booking procedures.",
-  },
-  {
-    id: 9,
-    question: "How do I contact customer support?",
-    answer:
-      "Providing a detailed list of popular attractions covered in your tours can attract search queries related to those destinations. Explain the booking process clearly, including steps and any necessary information, to capture search queries about booking procedures.",
+      "Eligibility depends on academic qualifications, language requirements (like IELTS/TOEFL), and financial criteria.",
   },
 ];
 

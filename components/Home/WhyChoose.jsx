@@ -5,13 +5,24 @@ const WhyChoose = () => {
     <section className="w-[100vw] h-auto mt-[3.5rem] md:mt-[3rem] mb-[3rem]">
       <div className="w-10/12 mx-auto">
         {/* Heading section */}
-        <div className="space-y-1.5">
+        <div className="space-y-3">
           <h2 className="text-center font-poppins text-[#1F94F3] font-bold text-[22px] md:text-[30px] leading-[33.6px] md:mb-2">
             WHY CHOOSE US
           </h2>
           <p className="font-jost text-center text-[#5C6066] text-[14px] md:text-[16px]">
             Endless possibilities begin here
           </p>
+          <div className="max-w-3xl mx-auto pt-2 space-y-3 text-center">
+            <p className="font-jost text-[#5C6066] text-[14px] md:text-[15px] leading-relaxed">
+              Career Thrive primarily caters to counselling students for their quest to study overseas and ensures they are guided in the best possible manner. Career Thrive is a one-stop solution for all student needs such as study loans, foreign exchange, visas, flight tickets, insurance, accommodation, and more—for both students and parents.
+            </p>
+            <p className="font-jost text-[#5C6066] text-[14px] md:text-[15px] leading-relaxed">
+              We also cater to all kinds of foreign exchange transactions, travel needs (tickets, visas, holidays), and insurance services.
+            </p>
+            <p className="font-jost text-[#5C6066] text-[14px] md:text-[15px] leading-relaxed">
+              Our principle is to offer every student the same world-class service that our clientele expects. Our team's primary goal is to ensure that each student's educational and career objectives are not just met, but exceeded.
+            </p>
+          </div>
         </div>
 
         {/* Grid section */}
