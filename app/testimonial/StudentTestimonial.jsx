@@ -65,7 +65,7 @@ const StudentTestimonial = () => {
         </h2>
       </div>
 
-      <div className="w-10/12 gap-9 mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-[2.5rem] md:mt-[3rem] mb-[3rem] place-items-center">
+      <div className="w-10/12 gap-9 mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-[2.5rem] md:mt-[3rem] mb-[3rem]">
         {studentVideos.map((video, index) => (
           <VideoCard
             key={video.id}
