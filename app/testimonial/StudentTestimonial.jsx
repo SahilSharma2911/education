@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useCallback } from "react";
 import { MdOutlinePlayCircle } from "react-icons/md";
 
 const studentVideos = [
@@ -10,32 +10,29 @@ const studentVideos = [
   { id: 5, src: "/videos/VID_20260501_232704_794_bsl.mp4" },
 ];
 
-const VideoCard = ({ src }) => {
-  const videoRef = useRef(null);
-  const [playing, setPlaying] = useState(false);
+const VideoCard = ({ id, src, activeVideoId, onPlay, videoRef }) => {
+  const isPlaying = activeVideoId === id;
 
-  const handlePlay = () => {
-    if (videoRef.current) {
-      videoRef.current.play();
-      setPlaying(true);
-    }
+  const handlePlayClick = () => {
+    onPlay(id);
+    videoRef.current?.play();
   };
 
   return (
-    <div className="relative w-[21rem] h-[14.5rem] bg-[#D9D9D9] overflow-hidden flex justify-center items-center">
+    <div className="relative w-full aspect-video bg-[#D9D9D9] rounded-md">
       <video
         ref={videoRef}
         src={src}
-        className="w-full h-full object-cover"
+        className="w-full h-full object-contain"
         preload="metadata"
-        controls={playing}
-        onPause={() => setPlaying(false)}
-        onEnded={() => setPlaying(false)}
+        controls={isPlaying}
+        onPause={() => onPlay(null)}
+        onEnded={() => onPlay(null)}
       />
-      {!playing && (
+      {!isPlaying && (
         <button
-          onClick={handlePlay}
-          className="absolute inset-0 flex justify-center items-center bg-black/20 hover:bg-black/30 transition-colors"
+          onClick={handlePlayClick}
+          className="absolute inset-0 flex justify-center items-center bg-black/20 hover:bg-black/30 transition-colors rounded-md"
           aria-label="Play video"
         >
           <MdOutlinePlayCircle className="text-[8rem] text-white drop-shadow-lg" />
@@ -46,6 +43,20 @@ const VideoCard = ({ src }) => {
 };
 
 const StudentTestimonial = () => {
+  const [activeVideoId, setActiveVideoId] = useState(null);
+  // one stable ref per video, created once
+  const videoRefs = useRef(studentVideos.map(() => React.createRef()));
+
+  const handlePlay = useCallback((id) => {
+    // pause every video that is not the one being activated
+    videoRefs.current.forEach((ref, i) => {
+      if (studentVideos[i].id !== id) {
+        ref.current?.pause();
+      }
+    });
+    setActiveVideoId(id);
+  }, []);
+
   return (
     <section className="mb-[3rem] md:mb-[4rem]">
       <div>
@@ -55,8 +66,15 @@ const StudentTestimonial = () => {
       </div>
 
       <div className="w-10/12 gap-9 mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-[2.5rem] md:mt-[3rem] mb-[3rem] place-items-center">
-        {studentVideos.map((video) => (
-          <VideoCard key={video.id} src={video.src} />
+        {studentVideos.map((video, index) => (
+          <VideoCard
+            key={video.id}
+            id={video.id}
+            src={video.src}
+            activeVideoId={activeVideoId}
+            onPlay={handlePlay}
+            videoRef={videoRefs.current[index]}
+          />
         ))}
       </div>
     </section>
