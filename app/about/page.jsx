@@ -2,6 +2,7 @@ import OurHeader from "@/components/OurHeader/OurHeader";
 import React from "react";
 import WhoAre from "./WhoAre";
 import Why from "./Why";
+import BeyondEducation from "@/components/Home/BeyondEducation";
 import Counseling from "@/components/Home/Counseling";
 import Professional from "./Professional";
 import Head from "next/head";
@@ -30,6 +31,7 @@ const page = () => {
         <OurHeader title="About Us" />
         <WhoAre />
         <Why />
+        <BeyondEducation />
         <Counseling bgColor="" />
         <Professional />
       </main>
