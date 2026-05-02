@@ -26,7 +26,7 @@ const Why = () => {
               We also cater to all kinds of foreign exchange transactions, travel needs (tickets, visas, holidays), and insurance services.
             </p>
             <p className="font-jost text-[#5C6066] text-[14px] md:text-[15px] leading-relaxed">
-              Our principle is to offer every student the same world-class service that our clientele expects. Our team's primary goal is to ensure that each student's educational and career objectives are not just met, but exceeded.
+              Our principle is to offer every student the same world-class service that our clientele expects. Our team&apos;s primary goal is to ensure that each student&apos;s educational and career objectives are not just met, but exceeded.
             </p>
           </div>
         </div>
