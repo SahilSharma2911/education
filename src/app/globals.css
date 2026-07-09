@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Theme-blue focus for all form fields (replaces the dark default outline) */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #1F94F3;
+    box-shadow: 0 0 0 2px rgba(31, 148, 243, 0.25);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100vw;
+    height: auto;
+}
+
+/* Shimmer loading placeholder (e.g. hero image while it loads).
+   Mid-gray tones with a bright moving highlight so the sweep stays clearly
+   visible on the light theme. */
+.shimmer {
+    background: linear-gradient(90deg,
+            #9ca3af 25%,
+            #e5e7eb 50%,
+            #9ca3af 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.3s linear infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Smooth page transition on route change (fade only — so the
+   hero section doesn't appear to jump upward) */
+.page-transition {
+    animation: pageFadeIn 0.4s ease-out;
+}
+
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .page-transition {
+        animation: none;
+    }
+}
+
+.topNav {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.custom-toast {
+    background-color: white !important;
+    color: black !important;
+}
+
+.custom-toast .Toastify__toast-icon svg {
+    fill: #1F94F3 !important;
+}
+
+.custom-toast .Toastify__progress-bar {
+    background-color: #1F94F3 !important;
+}
+
+.custom-toast .Toastify__progress-bar--animated {
+    background: #87CEFA !important;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#faq {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+
+#Navbar {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+;
+
+.list .active {
+    color: #1F94F3;
+}
+
+.light-black {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.slick-dots li.slick-active div {
+    background: #000 !important;
+}
+
+/* Minimal scroll-reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform;
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Home modal entrance animations */
+.modal-overlay {
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+.modal-content {
+    animation: modalPopIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modalPopIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
