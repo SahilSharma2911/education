@@ -1,4 +1,5 @@
 import React from "react";
+import Reveal from "@/components/Reveal/Reveal";
 
 const Ourservices = () => {
   return (
@@ -19,7 +20,7 @@ const Ourservices = () => {
         <div className=" flex flex-col lg:flex-row mx-auto justify-evenly gap-4 w-full h-auto my-[2rem] md:my-[3rem] ">
           {/* left side section  */}
           <div className=" w-full flex  flex-col gap-[3rem] lg:gap-[6rem]">
-            <div className="flex flex-col-reverse lg:flex-col gap-[1.5rem] lg:gap-[6rem] items-center">
+            <Reveal className="flex flex-col-reverse lg:flex-col gap-[1.5rem] lg:gap-[6rem] items-center">
               {/* service1 img  */}
               <div className="w-[15rem] md:w-[20rem]">
                 <img src={"/Images/service1.svg"} alt="#" />
@@ -45,9 +46,9 @@ const Ourservices = () => {
                   </p>
                 </span>
               </div>
-            </div>
+            </Reveal>
 
-            <div className="flex flex-col-reverse lg:flex-col gap-[2rem] lg:gap-[6rem] items-center">
+            <Reveal className="flex flex-col-reverse lg:flex-col gap-[2rem] lg:gap-[6rem] items-center">
               {/* service3 img  */}
               <div className="w-[15rem] md:w-[20rem]">
                 <img
@@ -82,9 +83,9 @@ const Ourservices = () => {
                   </p>
                 </span>
               </div>
-            </div>
+            </Reveal>
 
-            <div className="flex flex-col-reverse lg:flex-col gap-[2rem] lg:gap-[6rem] items-center">
+            <Reveal className="flex flex-col-reverse lg:flex-col gap-[2rem] lg:gap-[6rem] items-center">
               {/* service5 img  */}
               <div className="w-[15rem] md:w-[20rem]">
                 <img
@@ -119,7 +120,7 @@ const Ourservices = () => {
                   </p>
                 </span>
               </div>
-            </div>
+            </Reveal>
           </div>
 
           {/* Middle section  */}
@@ -163,7 +164,7 @@ const Ourservices = () => {
 
           {/* right side section  */}
           <div className=" text-center items-center w-full flex  flex-col gap-[3rem] lg:gap-[6rem] lg:mt-[4rem] ">
-            <div className="flex flex-col-reverse lg:flex-col gap-[2rem] lg:gap-[6rem] items-center">
+            <Reveal className="flex flex-col-reverse lg:flex-col gap-[2rem] lg:gap-[6rem] items-center">
               <div className="text-center lg:text-start lg:pl-10">
                 <span className="hidden lg:flex flex-col">
                   <h3 className=" font-poppins font-bold md:text-[25px] text-[#666666] leading-[16px] md:leading-[36px]">
@@ -184,11 +185,11 @@ const Ourservices = () => {
                   </p>
                 </span>
               </div>
-            </div>
+            </Reveal>
             {/* text section  */}
 
             {/* service1 img2  */}
-            <div className="w-[15rem] md:w-[20rem] mt-[-1rem] lg:mt-0">
+            <Reveal className="w-[15rem] md:w-[20rem] mt-[-1rem] lg:mt-0">
               <img
                 src={"/Images/service2.svg"}
                 alt="#"
@@ -199,10 +200,10 @@ const Ourservices = () => {
                 alt="#"
                 className="flex lg:hidden"
               />
-            </div>
+            </Reveal>
 
             {/* text section  */}
-            <div className="text-center lg:text-start lg:pl-10">
+            <Reveal className="text-center lg:text-start lg:pl-10">
               <span className="hidden lg:flex flex-col">
                 <h3 className=" font-poppins font-bold md:text-[25px] text-[#666666] leading-[16px] md:leading-[36px]">
                   Online & Offline Coaching
@@ -221,10 +222,10 @@ const Ourservices = () => {
                   Presence Or By Screen-Sharing To Ensure 100% Transparency.
                 </p>
               </span>
-            </div>
+            </Reveal>
 
             {/* service4 img  */}
-            <div className="w-[15rem] md:w-[20rem] mt-[-1rem] lg:mt-0">
+            <Reveal className="w-[15rem] md:w-[20rem] mt-[-1rem] lg:mt-0">
               <img
                 src={"/Images/service4.svg"}
                 alt="#"
@@ -235,10 +236,10 @@ const Ourservices = () => {
                 alt="#"
                 className="flex lg:hidden"
               />
-            </div>
+            </Reveal>
 
             {/* text section  */}
-            <div className="text-center lg:text-start lg:pl-10">
+            <Reveal className="text-center lg:text-start lg:pl-10">
               <span className="hidden lg:flex flex-col">
                 <h3 className=" font-poppins font-bold md:text-[25px] text-[#666666] leading-[16px] md:leading-[36px]">
                   VISA Application
@@ -257,12 +258,12 @@ const Ourservices = () => {
                   International SIM Card, And More, Before You Go.
                 </p>
               </span>
-            </div>
+            </Reveal>
 
             {/* service3 img6  */}
-            <div className="w-[15rem] md:w-[20rem] mt-[-1rem] lg:mt-0">
+            <Reveal className="w-[15rem] md:w-[20rem] mt-[-1rem] lg:mt-0">
               <img src={"/Images/service6.svg"} alt="#" />
-            </div>
+            </Reveal>
           </div>
         </div>
       </div>

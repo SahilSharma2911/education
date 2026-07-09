@@ -6,7 +6,7 @@ import Testimonials from "@/components/Home/Testimonials";
 import TopDestination from "@/components/Home/TopDestination";
 import WhyChoose from "@/components/Home/WhyChoose";
 import BeyondEducation from "@/components/Home/BeyondEducation";
-import HomeModal from "@/components/Modal/HomeModal";
+import Reveal from "@/components/Reveal/Reveal";
 import Navbar from "@/components/Navbar/Navbar";
 import StoreDataProvider from "@/context/StoreContext";
 import Image from "next/image";
@@ -32,14 +32,24 @@ export default function Home() {
 
       <main className="">
         <Header />
-        <Counseling page="homepage" />
-        <TopDestination />
-        <WhyChoose />
-        <BeyondEducation />
-        <Testimonials />
-        <Faq />
-        {/* modal component */}
-        <HomeModal />
+        <Reveal>
+          <Counseling page="homepage" />
+        </Reveal>
+        <Reveal>
+          <TopDestination />
+        </Reveal>
+        <Reveal>
+          <WhyChoose />
+        </Reveal>
+        <Reveal>
+          <BeyondEducation />
+        </Reveal>
+        <Reveal>
+          <Testimonials />
+        </Reveal>
+        <Reveal>
+          <Faq />
+        </Reveal>
       </main>
     </>
   );

@@ -2,6 +2,7 @@ import React from "react";
 import Ourservices from "./Ourservices";
 import University from "./University";
 import OurHeader from "@/components/OurHeader/OurHeader";
+import Reveal from "@/components/Reveal/Reveal";
 import Head from "next/head";
 
 const page = () => {
@@ -27,7 +28,9 @@ const page = () => {
       <main>
         <OurHeader title="Our Services" />
         <Ourservices />
-        <University />
+        <Reveal>
+          <University />
+        </Reveal>
       </main>
     </>
   );

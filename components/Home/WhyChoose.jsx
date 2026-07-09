@@ -74,7 +74,9 @@ const WhyChoose = () => {
                 {/* Image */}
                 <img
                   src={item.src}
-                  alt="##"
+                  alt={item.subtext}
+                  loading="lazy"
+                  decoding="async"
                   className="rounded-xl w-full h-full object-cover transition-transform duration-500 transform hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black opacity-40 rounded-xl pointer-events-none"></div>

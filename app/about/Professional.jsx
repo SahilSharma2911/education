@@ -34,7 +34,9 @@ const Professional = () => {
           >
             <img
               src={"/Images/team.jpeg"}
-              alt="img"
+              alt="Team member"
+              loading="lazy"
+              decoding="async"
               className="rounded-xl shadow-xl "
             />
             <div
@@ -58,7 +60,9 @@ const Professional = () => {
           >
             <img
               src={"/Images/team.jpeg"}
-              alt="img"
+              alt="Team member"
+              loading="lazy"
+              decoding="async"
               className="rounded-xl shadow-xl "
             />
             <div
@@ -82,7 +86,9 @@ const Professional = () => {
           >
             <img
               src={"/Images/team.jpeg"}
-              alt="img"
+              alt="Team member"
+              loading="lazy"
+              decoding="async"
               className="rounded-xl shadow-xl "
             />
             <div

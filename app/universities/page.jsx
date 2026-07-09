@@ -3,6 +3,7 @@ import OurHeader from "@/components/OurHeader/OurHeader";
 import React, { useState } from "react";
 import AllCards from "./AllCards";
 import Filtered from "./Filtered";
+import Reveal from "@/components/Reveal/Reveal";
 import Head from "next/head";
 
 const Page = () => {
@@ -28,9 +29,9 @@ const Page = () => {
 
       <main>
         <OurHeader title="Universities" />
-        <section className="w-10/12 mx-auto mt-[3rem] md:mt-[4rem]">
+        <Reveal className="w-10/12 mx-auto mt-[3rem] md:mt-[4rem]">
           <Filtered country={country} setCountry={setCountry} />
-        </section>
+        </Reveal>
         <section className="mb-[2rem] md:mb-[3rem] mt-[3rem]">
           <AllCards country={country} />
         </section>

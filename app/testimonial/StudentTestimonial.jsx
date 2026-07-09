@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef, useState, useCallback } from "react";
 import { MdOutlinePlayCircle } from "react-icons/md";
+import Reveal from "@/components/Reveal/Reveal";
 
 const studentVideos = [
   { id: 1, src: "/videos/VID_20260501_234046_666_bsl.mp4" },
@@ -22,9 +23,12 @@ const VideoCard = ({ id, src, activeVideoId, onPlay, videoRef }) => {
     <div className="relative w-full aspect-video bg-[#D9D9D9] rounded-md">
       <video
         ref={videoRef}
-        src={src}
+        // `#t=0.1` makes the browser seek to the first frame and paint it as a
+        // thumbnail, so the box shows the video preview instead of empty grey.
+        src={`${src}#t=0.1`}
         className="w-full h-full object-contain"
         preload="metadata"
+        playsInline
         controls={isPlaying}
         onPause={() => onPlay(null)}
         onEnded={() => onPlay(null)}
@@ -59,22 +63,23 @@ const StudentTestimonial = () => {
 
   return (
     <section className="mb-[3rem] md:mb-[4rem]">
-      <div>
+      <Reveal>
         <h2 className="text-center font-poppins text-[#1F94F3] font-bold text-[22px] md:text-[30px] leading-[33.6px] md:mb-2">
           STUDENTS VIDEOS
         </h2>
-      </div>
+      </Reveal>
 
       <div className="w-10/12 gap-9 mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-[2.5rem] md:mt-[3rem] mb-[3rem]">
         {studentVideos.map((video, index) => (
-          <VideoCard
-            key={video.id}
-            id={video.id}
-            src={video.src}
-            activeVideoId={activeVideoId}
-            onPlay={handlePlay}
-            videoRef={videoRefs.current[index]}
-          />
+          <Reveal key={video.id} delay={(index % 3) * 100}>
+            <VideoCard
+              id={video.id}
+              src={video.src}
+              activeVideoId={activeVideoId}
+              onPlay={handlePlay}
+              videoRef={videoRefs.current[index]}
+            />
+          </Reveal>
         ))}
       </div>
     </section>

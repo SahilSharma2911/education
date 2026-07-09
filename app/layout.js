@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import Head from "next/head";
 import "./globals.css";
 import Whatsapp from "@/components/FloatingIcon/Whatsapp";
+import HomeModal from "@/components/Modal/HomeModal";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -34,6 +35,7 @@ export default function RootLayout({ children }) {
         <StoreDataProvider>
           <Navbar />
           {children}
+          <HomeModal />
           <Whatsapp />
           <Footer />
           <ToastContainer position="top-center" />

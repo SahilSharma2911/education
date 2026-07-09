@@ -42,10 +42,13 @@ const Card = ({
       <div className="mt-4 flex flex-col items-center">
         <div className="w-20">
           <img
-            classclassName="rounded-full border-2 border-white"
+            className="rounded-full border-2 border-white"
             src={`/Images/${image}`}
             alt={name}
-            width="80px"
+            width="80"
+            height="80"
+            loading="lazy"
+            decoding="async"
           />
         </div>
         <h4 className="mt-4 text-lg font-bold text-yellow-400">{name}</h4>

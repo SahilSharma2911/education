@@ -1,6 +1,7 @@
 import React from "react";
 import { countryData } from "../../public/Images/data";
 import UniCard from "./UniCard";
+import Reveal from "@/components/Reveal/Reveal";
 
 const AllCards = ({ country }) => {
   const getAllCards = () => {
@@ -16,14 +17,15 @@ const AllCards = ({ country }) => {
   return (
     <div className="flex flex-col">
       <div className="flex flex-wrap justify-center items-start w-10/12 mx-auto gap-5 md:gap-10">
-        {filteredCards.map((data) => (
-          <UniCard
-            key={data.id}
-            title={data.title}
-            description={data.description}
-            badge={data.badge}
-            imageURL={data.imgURL}
-          />
+        {filteredCards.map((data, index) => (
+          <Reveal key={data.id} delay={(index % 3) * 100}>
+            <UniCard
+              title={data.title}
+              description={data.description}
+              badge={data.badge}
+              imageURL={data.imgURL}
+            />
+          </Reveal>
         ))}
       </div>
       <button

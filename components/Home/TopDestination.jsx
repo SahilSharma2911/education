@@ -56,7 +56,7 @@ const TopDestination = () => {
               className="text-center w-2/12 flex flex-col items-center gap-3 transition-transform duration-300 transform hover:scale-105"
             >
               <div>
-                <img src={flag.src} alt={flag.text} />
+                <img src={flag.src} alt={flag.text} loading="lazy" decoding="async" />
               </div>
               <h3 className="font-bold">{flag.text}</h3>
             </div>
@@ -78,7 +78,7 @@ const TopDestination = () => {
                 className="w-2/12 text-center flex flex-col items-center gap-3"
               >
                 <div>
-                  <img src={flag.src} alt={flag.text} />
+                  <img src={flag.src} alt={flag.text} loading="lazy" decoding="async" />
                 </div>
                 <h3 className="font-bold">{flag.text}</h3>
               </div>

@@ -1,30 +1,32 @@
 import React from "react";
 import { testimonial } from "../../public/Images/data";
 import Card from "@/components/Card/Card";
+import Reveal from "@/components/Reveal/Reveal";
 const AllTestimonials = () => {
   return (
     <section className="mt-[3rem] mb-[3rem] md:mt-[4rem]">
-      <div className="space-y-1">
+      <Reveal className="space-y-1">
         <h2 className="text-center font-poppins text-[#1F94F3] font-bold text-[22px] md:text-[30px] leading-[33.6px] md:mb-2">
           STUDENT TESTIMONIALS
         </h2>
         <p className="font-jost text-center text-[#5C6066] text-[14px] md:text-[16px]">
           Experiences, and stories from our students
         </p>
-      </div>
+      </Reveal>
       <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-10/12 mx-auto my-[3rem]">
-        {testimonial.map((item) => (
-          <Card
-            className="slider-card"
-            key={item.id}
-            name={item.name}
-            description={item.description}
-            image={item.img}
-            university={item.school}
-            linkedinUrl={item.linkedinUrl}
-            googlePlusUrl={item.googlePlusUrl}
-            imageUrl={item.imageUrl}
-          />
+        {testimonial.map((item, index) => (
+          <Reveal key={item.id} delay={(index % 3) * 100}>
+            <Card
+              className="slider-card"
+              name={item.name}
+              description={item.description}
+              image={item.img}
+              university={item.school}
+              linkedinUrl={item.linkedinUrl}
+              googlePlusUrl={item.googlePlusUrl}
+              imageUrl={item.imageUrl}
+            />
+          </Reveal>
         ))}
       </div>
       {/* <div className=" flex">

@@ -34,6 +34,8 @@ const Counseling = ({ page }) => {
                 <img
                   src={`/Images/step${index + 1}.png`}
                   alt={`step${index + 1}`}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <p className="text-[14px] md:text-[16px] leading-[20px] font-jost">

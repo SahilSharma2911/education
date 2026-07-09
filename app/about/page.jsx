@@ -5,6 +5,7 @@ import Why from "./Why";
 import BeyondEducation from "@/components/Home/BeyondEducation";
 import Counseling from "@/components/Home/Counseling";
 import Professional from "./Professional";
+import Reveal from "@/components/Reveal/Reveal";
 import Head from "next/head";
 
 const page = () => {
@@ -29,11 +30,21 @@ const page = () => {
 
       <main>
         <OurHeader title="About Us" />
-        <WhoAre />
-        <Why />
-        <BeyondEducation />
-        <Counseling bgColor="" />
-        <Professional />
+        <Reveal>
+          <WhoAre />
+        </Reveal>
+        <Reveal>
+          <Why />
+        </Reveal>
+        <Reveal>
+          <BeyondEducation />
+        </Reveal>
+        <Reveal>
+          <Counseling bgColor="" />
+        </Reveal>
+        <Reveal>
+          <Professional />
+        </Reveal>
       </main>
     </>
   );

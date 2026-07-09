@@ -1,16 +1,35 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { LiaTimesSolid } from "react-icons/lia";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const HomeModal = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
   });
+
+  useEffect(() => {
+    // Wait until the page is fully loaded, then show the modal after a delay.
+    let timer;
+    const showAfterDelay = () => {
+      timer = setTimeout(() => setIsOpen(true), 2000);
+    };
+
+    if (document.readyState === "complete") {
+      showAfterDelay();
+    } else {
+      window.addEventListener("load", showAfterDelay);
+    }
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("load", showAfterDelay);
+    };
+  }, []);
 
   const closeModal = () => {
     setIsOpen(false);
@@ -47,9 +66,9 @@ const HomeModal = () => {
   if (!isOpen) return null;
 
   return (
-    <section className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 md:py-4 lg:m-0 px-[0.2rem] lg:px-0 lg:pr-20">
+    <section className="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 md:py-4 lg:m-0 px-[0.2rem] lg:px-0 lg:pr-20">
       {/* Modal Content */}
-      <div className="relative p-4 lg:w-[800px] h-fit lg:h-[550px] flex flex-col lg:flex-row items-center justify-center overflow-hidden">
+      <div className="modal-content relative p-4 lg:w-[800px] h-fit lg:h-[550px] flex flex-col lg:flex-row items-center justify-center overflow-hidden">
         {/* Close Button */}
         <button
           onClick={closeModal}
@@ -62,14 +81,18 @@ const HomeModal = () => {
           <Image
             src="/Images/bg-modal.jpeg"
             width={700}
-            height={700}
+            height={467}
+            quality={70}
+            sizes="(max-width: 1024px) 0px, 700px"
             alt="Modal background"
             className="object-cover hidden lg:flex"
           />
           <Image
             src="/Images/bg-modal2.jpeg"
             width={700}
-            height={700}
+            height={463}
+            quality={70}
+            sizes="(max-width: 1024px) 100vw, 0px"
             alt="Modal background"
             className="object-cover flex lg:hidden"
           />
@@ -79,7 +102,9 @@ const HomeModal = () => {
           <Image
             src="/Images/human.png"
             width={400}
-            height={400}
+            height={540}
+            quality={75}
+            sizes="400px"
             alt="Human"
             className="z-20 w-[60%] lg:w-[400px]"
           />

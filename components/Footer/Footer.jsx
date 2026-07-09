@@ -19,6 +19,8 @@ const Footer = () => {
               alt="Career Thrive logo"
               width={100}
               height={100}
+              loading="lazy"
+              decoding="async"
               className="-ml-[20px] md:-ml-[26px] mt-2 md:mt-4"
             />
           </Link>

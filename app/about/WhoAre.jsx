@@ -41,7 +41,9 @@ const WhoAre = () => {
           <div className=" lg:w-5/12 mt-3">
             <img
               src={"/Images/whoareimg.jpeg"}
-              alt="img"
+              alt="Career Thrive team"
+              loading="lazy"
+              decoding="async"
               className=" rounded-xl"
             />
           </div>

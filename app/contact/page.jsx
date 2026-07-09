@@ -1,6 +1,7 @@
 import OurHeader from "@/components/OurHeader/OurHeader";
 import React from "react";
 import Form from "./Form";
+import Reveal from "@/components/Reveal/Reveal";
 import Head from "next/head";
 
 const page = () => {
@@ -25,7 +26,9 @@ const page = () => {
       
       <main>
         <OurHeader title="Contact Us" />
-        <Form />
+        <Reveal>
+          <Form />
+        </Reveal>
       </main>
     </>
   );
