@@ -52,7 +52,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="w-[100vw] h-auto relative">
+    <>
       <nav className="topNav text-white font-bold w-full bg-[#1C1F2A] py-1.5 text-[0.8rem] hidden md:flex justify-end">
         <ul className="font-inria flex justify-end px-8 gap-4">
           <li>
@@ -73,6 +73,8 @@ const Navbar = () => {
         </ul>
       </nav>
 
+      {/* Only the white bar sticks; the dark strip above scrolls away */}
+      <header className="sticky top-0 z-50 bg-white shadow-sm w-[100vw]">
       {/* Main Navbar section */}
       <div className="w-11/12 py-3 flex justify-between mx-auto items-center relative">
         <div className="flex gap-[4rem] xl:gap-[8rem] items-center">
@@ -157,7 +159,8 @@ const Navbar = () => {
           </Link>
         </div>
       </nav>
-    </header>
+      </header>
+    </>
   );
 };
 

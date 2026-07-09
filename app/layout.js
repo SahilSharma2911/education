@@ -6,6 +6,7 @@ import Head from "next/head";
 import "./globals.css";
 import Whatsapp from "@/components/FloatingIcon/Whatsapp";
 import HomeModal from "@/components/Modal/HomeModal";
+import PageTransition from "@/components/PageTransition/PageTransition";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -34,7 +35,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <StoreDataProvider>
           <Navbar />
-          {children}
+          <PageTransition>{children}</PageTransition>
           <HomeModal />
           <Whatsapp />
           <Footer />

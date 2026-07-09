@@ -7,12 +7,51 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    scroll-behavior: smooth;
+}
+
+/* Theme-blue focus for all form fields (replaces the dark default outline) */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #1F94F3;
+    box-shadow: 0 0 0 2px rgba(31, 148, 243, 0.25);
+}
+
 body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
     width: 100vw;
     height: auto;
+}
+
+/* Smooth page transition on route change (fade only — no slide, so the
+   hero section doesn't appear to jump upward) */
+.page-transition {
+    animation: pageFadeIn 0.4s ease-out;
+}
+
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .page-transition {
+        animation: none;
+    }
 }
 
 .topNav {

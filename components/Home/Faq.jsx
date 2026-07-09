@@ -24,7 +24,8 @@ const faqData = [
 ];
 
 const Faq = () => {
-  const [openFaqs, setOpenFaqs] = useState({});
+  // First FAQ open by default
+  const [openFaqs, setOpenFaqs] = useState({ [faqData[0].id]: true });
 
   const toggleFaq = (id) => {
     setOpenFaqs((prevOpenFaqs) => ({
@@ -35,12 +36,13 @@ const Faq = () => {
 
   const getContentStyle = (isOpen) => ({
     maxHeight: isOpen ? "1000px" : "0px",
+    opacity: isOpen ? 1 : 0,
     overflow: "hidden",
-    transition: "max-height 0.6s ease-in-out",
+    transition: "max-height 0.5s ease-in-out, opacity 0.4s ease-in-out",
   });
 
   return (
-    <section className="w-full my-[3rem]">
+    <section className="w-full mt-[3rem] mb-[5rem] md:mb-[7rem]">
       <div className="space-y-1.5">
         <h2 className="text-center font-poppins text-[#1F94F3] font-bold text-[22px] md:text-[30px] leading-[33.6px] md:mb-2 border-b-[3px] border-[#1F94F3] w-fit mx-auto px-1 pb-1">
           FAQ
@@ -49,17 +51,22 @@ const Faq = () => {
       <div className="w-9/12 lg:item-center lg:flex lg:flex-row lg:justify-between mx-auto mt-[2rem] md:mt-[4rem]">
         <div className="space-y-8 w-full">
           {faqData.map(({ id, question, answer }) => (
-            <div key={id} className="flex justify-between">
+            <div
+              key={id}
+              onClick={() => toggleFaq(id)}
+              className="flex justify-between gap-4 cursor-pointer select-none"
+            >
               <div>
                 <h3 className="font-heading font-semibold">{question}</h3>
                 <div style={getContentStyle(openFaqs[id])}>
                   <p className="font-text mt-3 w-10/12">{answer}</p>
                 </div>
               </div>
-              <div>
-                <button onClick={() => toggleFaq(id)}>
-                  {openFaqs[id] ? <FaMinus /> : <FaPlus />}
-                </button>
+              <div
+                className="pt-1 text-[#1F94F3] transition-transform duration-300"
+                aria-hidden="true"
+              >
+                {openFaqs[id] ? <FaMinus /> : <FaPlus />}
               </div>
             </div>
           ))}
